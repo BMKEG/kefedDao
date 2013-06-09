@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://bmkeg.isi.edu/owl/kefed/test.owl#"
+     xml:base="http://bmkeg.isi.edu/owl/kefed/test.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:kefed="http://bmkeg.isi.edu/owl/kefed/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://bmkeg.isi.edu/owl/kefed/test.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000000 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000000"/>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000002 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000002"/>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000004 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000004"/>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000005 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000005"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000111 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000111">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000000"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000112 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000112">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000004"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000113 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000113">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000004"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000114 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000114">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000004"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000115 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000115">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000004"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000116 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000116">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000004"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000117 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000117">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000004"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000118 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000118">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000004"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000119 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000119">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000005"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000120 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000120">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000002"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="KEfED_000119">
+        <rdfs:label xml:lang="en">Neuroanatomical Mapping and analysis</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000118">
+        <rdfs:label xml:lang="en">Immunostained slides</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000115">
+        <rdfs:label xml:lang="en">Brain</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000114">
+        <rdfs:label xml:lang="en">Perfusion</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000117">
+        <rdfs:label xml:lang="en">Immunohistochemistry</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000116">
+        <rdfs:label xml:lang="en">Tissue Sectioning</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000120">
+        <rdfs:label xml:lang="en">labeling</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000111">
+        <rdfs:label xml:lang="en">test</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000113">
+        <rdfs:label xml:lang="en">Injection</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000112">
+        <rdfs:label xml:lang="en">Experimental Subject</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.1.0.1592) http://owlapi.sourceforge.net -->
+

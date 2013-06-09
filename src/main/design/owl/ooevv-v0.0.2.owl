@@ -1,0 +1,2477 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY ooevv "http://bmkeg.isi.edu/ooevv/4" >
+    <!ENTITY ooevv2 "http://bmkeg.isi.edu/ooevv/8-" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY efo "http://bmkeg.isi.edu/ooevv/efo:" >
+    <!ENTITY ddi "http://bmkeg.isi.edu/ooevv/ddi:" >
+    <!ENTITY obo "http://purl.obolibrary.org/obo/" >
+    <!ENTITY obo2 "http://bmkeg.isi.edu/ooevv/obo:" >
+    <!ENTITY fma "http://bmkeg.isi.edu/ooevv/fma:" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY snap "http://www.ifomis.org/bfo/1.1/snap#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://bmkeg.isi.edu/ooevv/"
+     xml:base="http://bmkeg.isi.edu/ooevv/"
+     xmlns:efo="http://bmkeg.isi.edu/ooevv/efo:"
+     xmlns:snap="http://www.ifomis.org/bfo/1.1/snap#"
+     xmlns:ddi="http://bmkeg.isi.edu/ooevv/ddi:"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:obo2="http://bmkeg.isi.edu/ooevv/obo:"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:fma="http://bmkeg.isi.edu/ooevv/fma:"
+     xmlns:ooevv2="http://bmkeg.isi.edu/ooevv/8-"
+     xmlns:ooevv="http://bmkeg.isi.edu/ooevv/4">
+    <owl:Ontology rdf:about="http://bmkeg.isi.edu/ooevv/">
+        <owl:imports rdf:resource="&obo;iao/ontology-metadata.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000115"/>
+    <owl:AnnotationProperty rdf:about="&rdfs;label"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/allowedRelations -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/ooevv/allowedRelations">
+        <rdfs:label xml:lang="en">allowedRelations</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.RelativeTermScale"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/children -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/ooevv/children">
+        <rdfs:label xml:lang="en">children</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.HierarchicalValue"/>
+        <rdfs:range rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.HierarchicalValue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/exptVbs -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/ooevv/exptVbs">
+        <rdfs:label xml:lang="en">exptVbs</rdfs:label>
+        <rdfs:range rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariableSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/falseValue -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/ooevv/falseValue">
+        <rdfs:label xml:lang="en">falseValue</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.BinaryScaleWithNamedValues"/>
+        <rdfs:range rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.BinaryValue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/hasParts -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/ooevv/hasParts">
+        <rdfs:label xml:lang="en">hasParts</rdfs:label>
+        <rdfs:range rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/hierarchicalValues -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/ooevv/hierarchicalValues">
+        <rdfs:label xml:lang="en">hierarchicalValues</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.HierarchicalScale"/>
+        <rdfs:range rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.HierarchicalValue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/hierarchyRelation -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/ooevv/hierarchyRelation">
+        <rdfs:label xml:lang="en">hierarchyRelation</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.HierarchicalValue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/measures -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/ooevv/measures">
+        <rdfs:label xml:lang="en">measures</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/nominalValues -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/ooevv/nominalValues">
+        <rdfs:label xml:lang="en">nominalValues</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NominalScaleWithAllowedTerms"/>
+        <rdfs:range rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.NominalValue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/ordinalValues -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/ooevv/ordinalValues">
+        <rdfs:label xml:lang="en">ordinalValues</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.OrdinalScaleWithNamedRanks"/>
+        <rdfs:range rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.OrdinalValue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/parent -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/ooevv/parent">
+        <rdfs:label xml:lang="en">parent</rdfs:label>
+        <rdfs:range rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.HierarchicalValue"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.HierarchicalValue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/partOf -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/ooevv/partOf">
+        <rdfs:label xml:lang="en">partOf</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:range rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/relationTerm -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/ooevv/relationTerm">
+        <rdfs:label xml:lang="en">relationTerm</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.RelativeValueMapping"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/relativeTermType -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/ooevv/relativeTermType">
+        <rdfs:label xml:lang="en">relativeTermType</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.RelativeTermScale"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/scale -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/ooevv/scale">
+        <rdfs:label xml:lang="en">scale</rdfs:label>
+        <rdfs:range rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+                    <rdf:Description rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.MeasurementValue"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/sets -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/ooevv/sets">
+        <rdfs:label xml:lang="en">sets</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:range rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariableSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/targetValue -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/ooevv/targetValue">
+        <rdfs:label xml:lang="en">targetValue</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.RelativeValueMapping"/>
+        <rdfs:range rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.NominalValue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/trueValue -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/ooevv/trueValue">
+        <rdfs:label xml:lang="en">trueValue</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.BinaryScaleWithNamedValues"/>
+        <rdfs:range rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.BinaryValue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/units -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/ooevv/units">
+        <rdfs:label xml:lang="en">units</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NumericScale"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/valueMappings -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/ooevv/valueMappings">
+        <rdfs:label xml:lang="en">valueMappings</rdfs:label>
+        <rdfs:range rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.RelativeValueMapping"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.RelativeValue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/valueScale -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/ooevv/valueScale">
+        <rdfs:label xml:lang="en">valueScale</rdfs:label>
+        <rdfs:range rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NominalScaleWithAllowedTerms"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.RelativeTermScale"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/variables -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/ooevv/variables">
+        <rdfs:label xml:lang="en">variables</rdfs:label>
+        <rdfs:range rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/circular -->
+
+    <owl:DatatypeProperty rdf:about="http://bmkeg.isi.edu/ooevv/circular">
+        <rdfs:label xml:lang="en">circular</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NumericScale"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/classType -->
+
+    <owl:DatatypeProperty rdf:about="http://bmkeg.isi.edu/ooevv/classType">
+        <rdfs:label xml:lang="en">classType</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/doubleValue -->
+
+    <owl:DatatypeProperty rdf:about="http://bmkeg.isi.edu/ooevv/doubleValue">
+        <rdfs:label xml:lang="en">doubleValue</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.DecimalValue"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.HierarchicalScale.id -->
+
+    <owl:DatatypeProperty rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.HierarchicalScale.id">
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariableSet"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.RelativeValueMapping"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.BinaryScale"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.BinaryScaleWithNamedValues"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.DecimalScale"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.IntegerScale"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NaturalLanguageScale"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NominalScale"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NominalScaleWithAllowedTerms"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NumericScale"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.OrdinalScale"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.OrdinalScaleWithMaxRank"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.OrdinalScaleWithNamedRanks"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.RelativeTermScale"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.TimestampScale"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.BinaryValue"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.DecimalValue"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.HierarchicalValue"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.IntegerValue"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.MeasurementValue"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.NominalValue"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.NumericValue"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.OrdinalValue"/>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.RelativeValue"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/equalsAreEqual -->
+
+    <owl:DatatypeProperty rdf:about="http://bmkeg.isi.edu/ooevv/equalsAreEqual">
+        <rdfs:label xml:lang="en">equalsAreEqual</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.OrdinalScale"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/format -->
+
+    <owl:DatatypeProperty rdf:about="http://bmkeg.isi.edu/ooevv/format">
+        <rdfs:label xml:lang="en">format</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.TimestampScale"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/hasMaximum -->
+
+    <owl:DatatypeProperty rdf:about="http://bmkeg.isi.edu/ooevv/hasMaximum">
+        <rdfs:label xml:lang="en">hasMaximum</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NumericScale"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/hasMinimum -->
+
+    <owl:DatatypeProperty rdf:about="http://bmkeg.isi.edu/ooevv/hasMinimum">
+        <rdfs:label xml:lang="en">hasMinimum</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NumericScale"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/id -->
+
+    <owl:DatatypeProperty rdf:about="http://bmkeg.isi.edu/ooevv/id">
+        <rdfs:label xml:lang="en">id</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.HierarchicalScale"/>
+        <rdfs:range rdf:resource="&xsd;long"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/integerValue -->
+
+    <owl:DatatypeProperty rdf:about="http://bmkeg.isi.edu/ooevv/integerValue">
+        <rdfs:label xml:lang="en">integerValue</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.IntegerValue"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/maximumDoubleValue -->
+
+    <owl:DatatypeProperty rdf:about="http://bmkeg.isi.edu/ooevv/maximumDoubleValue">
+        <rdfs:label xml:lang="en">maximumDoubleValue</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.DecimalScale"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/maximumIntegerValue -->
+
+    <owl:DatatypeProperty rdf:about="http://bmkeg.isi.edu/ooevv/maximumIntegerValue">
+        <rdfs:label xml:lang="en">maximumIntegerValue</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.IntegerScale"/>
+        <rdfs:range rdf:resource="&xsd;long"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/maximumIsInclusive -->
+
+    <owl:DatatypeProperty rdf:about="http://bmkeg.isi.edu/ooevv/maximumIsInclusive">
+        <rdfs:label xml:lang="en">maximumIsInclusive</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NumericScale"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/maximumRank -->
+
+    <owl:DatatypeProperty rdf:about="http://bmkeg.isi.edu/ooevv/maximumRank">
+        <rdfs:label xml:lang="en">maximumRank</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.OrdinalScaleWithMaxRank"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/minimumDoubleValue -->
+
+    <owl:DatatypeProperty rdf:about="http://bmkeg.isi.edu/ooevv/minimumDoubleValue">
+        <rdfs:label xml:lang="en">minimumDoubleValue</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.DecimalScale"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/minimumIntegerValue -->
+
+    <owl:DatatypeProperty rdf:about="http://bmkeg.isi.edu/ooevv/minimumIntegerValue">
+        <rdfs:label xml:lang="en">minimumIntegerValue</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.IntegerScale"/>
+        <rdfs:range rdf:resource="&xsd;long"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/minimumIsInclusive -->
+
+    <owl:DatatypeProperty rdf:about="http://bmkeg.isi.edu/ooevv/minimumIsInclusive">
+        <rdfs:label xml:lang="en">minimumIsInclusive</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NumericScale"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/rank -->
+
+    <owl:DatatypeProperty rdf:about="http://bmkeg.isi.edu/ooevv/rank">
+        <rdfs:label xml:lang="en">Ranks</rdfs:label>
+        <rdfs:label xml:lang="en">rank</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">An integer denoting the rank order of a value in a list. This is the basic scale used for OrdinalScale variables where the values simply denote an ordered list with no specified maximum and no explicitly-defined semantic categories associated with each rank. </obo:IAO_0000115>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.OrdinalValue"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/uid -->
+
+    <owl:DatatypeProperty rdf:about="http://bmkeg.isi.edu/ooevv/uid">
+        <rdfs:label xml:lang="en">uid</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariableSet"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/value -->
+
+    <owl:DatatypeProperty rdf:about="http://bmkeg.isi.edu/ooevv/value">
+        <rdfs:label xml:lang="en">value</rdfs:label>
+        <rdfs:domain rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.BinaryValue"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable">
+        <rdfs:label xml:lang="en">ExperimentalVariable</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariableSet -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariableSet">
+        <rdfs:label xml:lang="en">ExperimentalVariableSet</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.RelativeValueMapping -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.RelativeValueMapping">
+        <rdfs:label xml:lang="en">RelativeValueMapping</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&snap;GenericallyDependentContinuant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.BinaryScale -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.BinaryScale">
+        <rdfs:label xml:lang="en">BinaryScale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.BinaryScaleWithNamedValues -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.BinaryScaleWithNamedValues">
+        <rdfs:label xml:lang="en">BinaryScaleWithNamedValues</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.BinaryScale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.DecimalScale -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.DecimalScale">
+        <rdfs:label xml:lang="en">DecimalScale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NumericScale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.HierarchicalScale -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.HierarchicalScale">
+        <rdfs:label xml:lang="en">HierarchicalScale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.IntegerScale -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.IntegerScale">
+        <rdfs:label xml:lang="en">IntegerScale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NumericScale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale">
+        <rdfs:label xml:lang="en">MeasurementScale</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NaturalLanguageScale -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NaturalLanguageScale">
+        <rdfs:label xml:lang="en">NaturalLanguageScale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NominalScale -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NominalScale">
+        <rdfs:label xml:lang="en">NominalScale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NominalScaleWithAllowedTerms -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NominalScaleWithAllowedTerms">
+        <rdfs:label xml:lang="en">NominalScaleWithAllowedTerms</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NominalScale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NumericScale -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NumericScale">
+        <rdfs:label xml:lang="en">NumericScale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.OrdinalScale -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.OrdinalScale">
+        <rdfs:label xml:lang="en">OrdinalScale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.OrdinalScaleWithMaxRank -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.OrdinalScaleWithMaxRank">
+        <rdfs:label xml:lang="en">OrdinalScaleWithMaxRank</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.OrdinalScale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.OrdinalScaleWithNamedRanks -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.OrdinalScaleWithNamedRanks">
+        <rdfs:label xml:lang="en">OrdinalScaleWithNamedRanks</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.OrdinalScaleWithMaxRank"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.RelativeTermScale -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.RelativeTermScale">
+        <rdfs:label xml:lang="en">RelativeTermScale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.TimestampScale -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.TimestampScale">
+        <rdfs:label xml:lang="en">TimestampScale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NumericScale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.BinaryValue -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.BinaryValue">
+        <rdfs:label xml:lang="en">BinaryValue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.MeasurementValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.DecimalValue -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.DecimalValue">
+        <rdfs:label xml:lang="en">DecimalValue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.NumericValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.HierarchicalValue -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.HierarchicalValue">
+        <rdfs:label xml:lang="en">HierarchicalValue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.MeasurementValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.IntegerValue -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.IntegerValue">
+        <rdfs:label xml:lang="en">IntegerValue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.NumericValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.MeasurementValue -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.MeasurementValue">
+        <rdfs:label xml:lang="en">MeasurementValue</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.NominalValue -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.NominalValue">
+        <rdfs:label xml:lang="en">NominalValue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.MeasurementValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.NumericValue -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.NumericValue">
+        <rdfs:label xml:lang="en">NumericValue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.MeasurementValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.OrdinalValue -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.OrdinalValue">
+        <rdfs:label xml:lang="en">OrdinalValue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.MeasurementValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.RelativeValue -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.RelativeValue">
+        <rdfs:label xml:lang="en">RelativeValue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.MeasurementValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.terminology.model.Term -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.terminology.model.Term"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/4rank-ordinal-strength -->
+
+    <owl:NamedIndividual rdf:about="&ooevv;rank-ordinal-strength">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.OrdinalScaleWithNamedRanks"/>
+        <rdfs:label xml:lang="en">4-rank ordinal strength</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">An ordinal representation of the size or &#39;strength&#39; of some measurable quantity (the ranks being &#39;none&#39;, &#39;weak&#39;, &#39;moderate&#39;, &#39;strong&#39;</obo:IAO_0000115>
+        <ordinalValues rdf:resource="&ooevv;rank-ordinal-strength-0-of-3-none"/>
+        <ordinalValues rdf:resource="&ooevv;rank-ordinal-strength-1-of-3-weak"/>
+        <ordinalValues rdf:resource="&ooevv;rank-ordinal-strength-2-of-3-moderate"/>
+        <ordinalValues rdf:resource="&ooevv;rank-ordinal-strength-3-of-3-strong"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/4rank-ordinal-strength-0-of-3-none -->
+
+    <owl:NamedIndividual rdf:about="&ooevv;rank-ordinal-strength-0-of-3-none">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.OrdinalValue"/>
+        <rdfs:label xml:lang="en">4rank-ordinal-strength = 0/3 none</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The lowest rank of a 4-rank ordinal representation of the size or &#39;strength&#39; of some measurable quantity</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/4rank-ordinal-strength-1-of-3-weak -->
+
+    <owl:NamedIndividual rdf:about="&ooevv;rank-ordinal-strength-1-of-3-weak">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.OrdinalValue"/>
+        <rdfs:label xml:lang="en">4rank-ordinal-strength = 1/3 weak</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The lowest-but-one rank of a 4-rank ordinal representation of the size or &#39;strength&#39; of some measurable quantity</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/4rank-ordinal-strength-2-of-3-moderate -->
+
+    <owl:NamedIndividual rdf:about="&ooevv;rank-ordinal-strength-2-of-3-moderate">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.OrdinalValue"/>
+        <rdfs:label xml:lang="en">4rank-ordinal-strength = 2/3 moderate</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The highest-but-one rank of a 4-rank ordinal representation of the size or &#39;strength&#39; of some measurable quantity</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/4rank-ordinal-strength-3-of-3-strong -->
+
+    <owl:NamedIndividual rdf:about="&ooevv;rank-ordinal-strength-3-of-3-strong">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.OrdinalValue"/>
+        <rdfs:label xml:lang="en">4rank-ordinal-strength = 3/3 strong</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The highest rank of a 4-rank ordinal representation of the size or &#39;strength&#39; of some measurable quantity</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/8-rank-ordinal-density -->
+
+    <owl:NamedIndividual rdf:about="&ooevv2;rank-ordinal-density">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.OrdinalScaleWithNamedRanks"/>
+        <rdfs:label xml:lang="en">8-rank-ordinal-density</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+        <ordinalValues rdf:resource="&ooevv2;rank-ordinal-density-0-of-7-zero"/>
+        <ordinalValues rdf:resource="&ooevv2;rank-ordinal-density-2-of-7-sparse"/>
+        <ordinalValues rdf:resource="&ooevv2;rank-ordinal-density-3-of-7-sparse-moderate"/>
+        <ordinalValues rdf:resource="&ooevv2;rank-ordinal-density-4-of-7-moderate"/>
+        <ordinalValues rdf:resource="&ooevv2;rank-ordinal-density-5-of-7-moderate-dense"/>
+        <ordinalValues rdf:resource="&ooevv2;rank-ordinal-density-6-of-7-dense"/>
+        <ordinalValues rdf:resource="&ooevv2;rank-ordinal-density-7-of-7-very-dense"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/8-rank-ordinal-density-0-of-7-zero -->
+
+    <owl:NamedIndividual rdf:about="&ooevv2;rank-ordinal-density-0-of-7-zero">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.OrdinalValue"/>
+        <rdfs:label xml:lang="en">8-rank-ordinal-density = 0/7 (zero)</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/8-rank-ordinal-density-2-of-7-sparse -->
+
+    <owl:NamedIndividual rdf:about="&ooevv2;rank-ordinal-density-2-of-7-sparse">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.OrdinalValue"/>
+        <rdfs:label xml:lang="en">8-rank-ordinal-density = 2/7 (sparse</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/8-rank-ordinal-density-3-of-7-sparse-moderate -->
+
+    <owl:NamedIndividual rdf:about="&ooevv2;rank-ordinal-density-3-of-7-sparse-moderate">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.OrdinalValue"/>
+        <rdfs:label xml:lang="en">8-rank-ordinal-density = 3/7 (sparse/moderate)</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/8-rank-ordinal-density-4-of-7-moderate -->
+
+    <owl:NamedIndividual rdf:about="&ooevv2;rank-ordinal-density-4-of-7-moderate">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.OrdinalValue"/>
+        <rdfs:label xml:lang="en">8-rank-ordinal-density = 4/7 (moderate)</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/8-rank-ordinal-density-5-of-7-moderate-dense -->
+
+    <owl:NamedIndividual rdf:about="&ooevv2;rank-ordinal-density-5-of-7-moderate-dense">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.OrdinalValue"/>
+        <rdfs:label xml:lang="en">8-rank-ordinal-density = 5/7 (moderate/dense)</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/8-rank-ordinal-density-6-of-7-dense -->
+
+    <owl:NamedIndividual rdf:about="&ooevv2;rank-ordinal-density-6-of-7-dense">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.OrdinalValue"/>
+        <rdfs:label xml:lang="en">8-rank-ordinal-density = 6/7 (dense)</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/8-rank-ordinal-density-7-of-7-very-dense -->
+
+    <owl:NamedIndividual rdf:about="&ooevv2;rank-ordinal-density-7-of-7-very-dense">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.OrdinalValue"/>
+        <rdfs:label xml:lang="en">8-rank-ordinal-density = 7/7 (very dense)</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/BAO_0000232 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/BAO_0000232">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.terminology.model.Term"/>
+        <rdfs:label xml:lang="en">virus</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A quality in which events occur in sequence.</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/C0013153 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/C0013153">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.HierarchicalValue"/>
+        <rdfs:label xml:lang="en">Drug Administration Routes</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">]</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/C0182805 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/C0182805">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.terminology.model.Term"/>
+        <rdfs:label xml:lang="en">Reagents, Cytology/Histology, Flow Cytometry</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Reagents used in cytologic assays performed by flow cytometers. They include labels for cell membranes and standards to normalize instrument setup, cell count, and proliferation. These reagents are frequently available in kits that allow the calibration, control, and standardization of flow cytometry analysis.</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/CHEBI:16670 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/CHEBI:16670">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.terminology.model.Term"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/CHEBI:50406 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/CHEBI:50406">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.terminology.model.Term"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/CHEBI:53000 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/CHEBI:53000">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.terminology.model.Term"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/CHEBI:59132 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/CHEBI:59132">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.terminology.model.Term"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/CTL-mediated_Immune_Response_Pathway -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/CTL-mediated_Immune_Response_Pathway">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.terminology.model.Term"/>
+        <rdfs:label xml:lang="en">CTL-mediated Immune Response Pathway</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Amide derived from two or more amino carboxylic acid molecules (the same or different) by formation of a covalent bond from the carbonyl carbon of one to the nitrogen atom of another with formal loss of water. The term is usually applied to structures formed from alpha-amino acids, but it includes those derived from any amino carboxylic acid.</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/NCBITaxon:131567 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/NCBITaxon:131567">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.HierarchicalValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/Neutralization-antibody-response -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/Neutralization-antibody-response">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Neutralization-antibody-response</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Qualitative measurement that describes the neutralizing antibody  titers/concentration in an neutralization assay</obo:IAO_0000115>
+        <measures rdf:resource="&obo2;VO_0000249"/>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/rank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/PATO:0000165 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/PATO:0000165">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.terminology.model.Term"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/SO:0000112 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/SO:0000112">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.terminology.model.Term"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/adjuvant-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/adjuvant-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Adjuvant Name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">An adjuvant is an immunologic agent that can stimulate an antigen-specific immune response to a vaccine without having any antigenic effects of its own. This variable denotes an adjuvant entity specified within the Vaccine ontology (VO)</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+        <measures rdf:resource="&obo2;VO_0000137"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/administration-route -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/administration-route">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.HierarchicalScale"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdfs:label xml:lang="en">Substance administration route</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">One of commonly-used terms denoting the ways in which substances may be administered based on the target tissue. Examples include intravenous, intramuscular, intrarectal, oral, subcutaneously.</obo:IAO_0000115>
+        <hierarchicalValues rdf:resource="http://bmkeg.isi.edu/ooevv/C0013153"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/antibody-concentration -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/antibody-concentration">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Antibody-concentration</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The amount of antibody in a given sample as indicated after a spectrophotometric analysis in an ELISA assay</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/mass-concentration"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/antibody-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/antibody-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Antibody name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">An antibody is a protein produced by the immune cells in response to specific antigens</obo:IAO_0000115>
+        <measures rdf:resource="&efo;EFO_0000264"/>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/antibody-optical-density -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/antibody-optical-density">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Antibody-optical-density</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Optical density values provide an indication of the amount of color, which is proportional to the amount of antibody bound, thus indicating the antibody concentration in an ELISA assay</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/optical-density"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/antibody-response -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/antibody-response">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Antibody-response</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Qualitative evaluation that describes the antibody titers/concentration in an ELISA assay</obo:IAO_0000115>
+        <scale rdf:resource="&ooevv;rank-ordinal-strength"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/antibody-titers -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/antibody-titers">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Antibody-titers</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A measurement of the amount of antibody produced that recognizes a particular epitope, expressed as the greatest dilution that still gives a positive result in an ELISA assay</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/numeric-ratio"/>
+        <measures rdf:resource="&obo2;VO_0000150"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/antigen-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/antigen-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Antigen name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A substance that causes the immue system of an organism to produce antibodies</obo:IAO_0000115>
+        <measures rdf:resource="http://bmkeg.isi.edu/ooevv/CHEBI:59132"/>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/antigenemia-concentration -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/antigenemia-concentration">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Antigenemia-concentration</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The concentration of antigenemia (antigen in blood) in a given sample as indicated after a spectrophotometric analysis in an ELISA assay</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/mass-concentration"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/antigenemia-presence -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/antigenemia-presence">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Antigenemia-presence</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Qualitative evaluation that describes the antigenemia presence in an ELISA assay</obo:IAO_0000115>
+        <scale rdf:resource="&ooevv;rank-ordinal-strength"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/brain-volume-location -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/brain-volume-location">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.RelativeTermScale"/>
+        <rdfs:label xml:lang="en">brain-volume-location</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/challenge-route -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/challenge-route">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Challenge route</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Mode of introducing challenge virus into the body</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/administration-route"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/challenge-virus -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/challenge-virus">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Challenge virus name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Virus used to infect experimental subjects</obo:IAO_0000115>
+        <measures rdf:resource="http://bmkeg.isi.edu/ooevv/BAO_0000232"/>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/co-stimulant-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/co-stimulant-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Co-stimulant name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Non-antigen molecule on the antigen-presenting cell that stimulates immune cells to trigger an immune response</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/count -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/count">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.IntegerScale"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdfs:label xml:lang="en">Count</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">An integer denoting the basic number of a set of entities in a sample or delineated set. This is the basic scale used for IntegerScale.</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/ctl-parameters -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/ctl-parameters">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">CTL-Parameters</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Parameters important for a CTL assay (An assay to measure the presence and cytotoxic activity of cytotoxic T cells in response to activation by a specific antigen/epitope)</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/ctl-parameters.co-stimulant-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/ctl-parameters.co-stimulant-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">CTL-Parameters -Co-stimulant name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Non-antigen molecule on the antigen-presenting cell that stimulates cytotoxic T cells to trigger an immune response during a CTL assay</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/ctl-parameters.epitope-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/ctl-parameters.epitope-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">CTL-Parameters-Epitope name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Part of an antigen recognized by cells of the immune system, specifically cytotoxic T cells</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/ctl-response -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/ctl-response">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">CTL-response</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Qualitative measurement that describes the % Specific lysis score in a CTL assay</obo:IAO_0000115>
+        <measures rdf:resource="http://bmkeg.isi.edu/ooevv/CTL-mediated_Immune_Response_Pathway"/>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/rank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/cytokine-concentration -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/cytokine-concentration">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Cytokine-concentration</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The concentration of cytokines in a given sample as indicated after a spectrophotometric analysis in an ELISA assay</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/mass-concentration"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/cytokine-response -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/cytokine-response">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Cytokine-response</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Qualitative evaluation that describes the cytokine titers in an ELISA assay</obo:IAO_0000115>
+        <scale rdf:resource="&ooevv;rank-ordinal-strength"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/ddi:optical_density_reading -->
+
+    <owl:NamedIndividual rdf:about="&ddi;optical_density_reading">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.terminology.model.Term"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/efo:EFO_0000264 -->
+
+    <owl:NamedIndividual rdf:about="&efo;EFO_0000264">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.terminology.model.Term"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/elipsot-numbers -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/elipsot-numbers">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">ELISPOT-numbers</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The number of antigen-specific T cells present among the sample in an ELISPOT</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/count"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/elipsot-parameters -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/elipsot-parameters">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">ELISPOT-Parameters</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Parameters important for an ELISPOT assay (An assay that measures the concentration T cells secreting IFN-g or other cytokines in response to certain antigens - obo:OBI_0600031)</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/elipsot-parameters.cytokine-ab-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/elipsot-parameters.cytokine-ab-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">ELISPOT-Parameters-Cytokine-Ab name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Type of the cytokine generated as an immune response to a specific antigen in an ELISPOT</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/elipsot-parameters.peptide-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/elipsot-parameters.peptide-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">ELISPOT-Parameters-Peptide name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A peptide from the antigen responsible for triggering T cells into secreting IFN-g or other cytokines</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/elipsot-response -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/elipsot-response">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">ELISPOT-response</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Qualitative measurement that describes the ELISPOT numbers in an ELISPOT assay</obo:IAO_0000115>
+        <scale rdf:resource="&ooevv;rank-ordinal-strength"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/elisa-parameters -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/elisa-parameters">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">ELISA-Parameters</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Parameters important for a ELISA assay (An assay for measuring the presence and concentration of antibodies or cytokines that are expressed in response to specific antigens in a given sample. It is also used to measure the presence and concentration of antigenemia (antigen in the blood stream) and antigens (in cells) in a given sample.)</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/elisa-parameters.antibody-type-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/elisa-parameters.antibody-type-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">ELISA-Parameters-Antibody type name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Type of the antibody generated as an immune response to a specific antigen</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/elisa-parameters.antigen-type-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/elisa-parameters.antigen-type-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">ELISA-Parameters-Antigen type name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Type of antigen (viral protein such as p27Gag) present due viral infection in host sample</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/elisa-parameters.antigenemia-type-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/elisa-parameters.antigenemia-type-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">ELISA-Parameters-Antigenemia type name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Type of the antigenemia (antigen in blood) present due to viral infection in host sample</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/elisa-parameters.cytokine-type-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/elisa-parameters.cytokine-type-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">ELISA-Parameters-Cytokine type name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Type of the cytokine generated as an immune response to a specific antigen</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/epitope-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/epitope-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Epitope name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Part of an antigen recognized by cells of the immune system</obo:IAO_0000115>
+        <measures rdf:resource="http://bmkeg.isi.edu/ooevv/CHEBI:53000"/>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/experiment-timeline-weeks -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/experiment-timeline-weeks">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Time</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Timeline of experimental procedures and data collection in a study</obo:IAO_0000115>
+        <measures rdf:resource="http://bmkeg.isi.edu/ooevv/PATO:0000165"/>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/time-in-weeks"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/facs-parameters -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/facs-parameters">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">FACS-Parameters</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Parameters important for a FACS analysis (A FACS analysis is an assay for counting and sorting different cell types from a mixed population based on fluorescent labels for different cell types)</obo:IAO_0000115>
+        <measures rdf:resource="http://bmkeg.isi.edu/ooevv/C0182805"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/facs-parameters-cell-type-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/facs-parameters-cell-type-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">FACS-Parameters-Cell-type-name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Identitites of the types of cells analyzed during a FACS assay</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/facs-parameters-cytokine-ab-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/facs-parameters-cytokine-ab-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">FACS-Parameters-Cytokine-Ab-name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Identity of the cytokine that is expressed as a response to activation by specific antigen/epitope</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/facs-parameters-epitope-Antigen-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/facs-parameters-epitope-Antigen-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">FACS-Parameters-Epitope/Antigen-name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Identitiy of the epitope/antigen used to activate immune cell response</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/fma:Portion_of_tissue -->
+
+    <owl:NamedIndividual rdf:about="&fma;Portion_of_tissue">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.HierarchicalValue"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.terminology.model.Term"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/his-lab -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/his-lab">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">histological-labeling</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A composite varaible showing the measured characteristics of a brain volume containing histological labeling </obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/his-lab-dens -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/his-lab-dens">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">histological-labeling.density</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A simple categorization of density of the label on the part of the neuron. </obo:IAO_0000115>
+        <scale rdf:resource="&ooevv2;rank-ordinal-density"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/his-lab-loc -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/his-lab-loc">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">histological-labeling.location</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Spatial extent of an individual region of labeling to named neuroanatomical terms from the BAMS ontology
+(judged by the scientist reporting the study to be relatively homogeneous)</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/brain-volume-location"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/his-lab-pres -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/his-lab-pres">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">histological-labeling.presence</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Is labeling present or absent?</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/presence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/his-lab-type -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/his-lab-type">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">histological-labeling.type</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A simple categorization of the part of the neuron that is labeled.</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/part-of-neuron"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/id-value -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/id-value">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NominalScale"/>
+        <rdfs:label xml:lang="en">id-values</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">An alpha-numeric string denoting an identifier for an entity. This is typically used as a label to denote a specific entity (either material or informational) within an experimental protocol. </obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/immunization-route -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/immunization-route">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Immunization-route</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Mode of introducing vaccine into the body</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/administration-route"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/mass-concentration -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/mass-concentration">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.DecimalScale"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdfs:label xml:lang="en">Mass Concentation</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Wikipedia: In chemistry, concentration is defined as the abundance of a constituent divided by the total volume of a mixture. The mass concentration is defined as the mass of a constituent divided by the volume of the mixture (units: kg/m3)</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/mean-count -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/mean-count">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.DecimalScale"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdfs:label xml:lang="en">Mean Count</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A mean average of a count of entities taken over a range of samples</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/mean-viral-rna-copies -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/mean-viral-rna-copies">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Mean-viral-RNA-copies</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Measurement of the means of Viral RNA copies across different subjects or tissue samples</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/mean-count"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NominalScale"/>
+        <rdfs:label xml:lang="en">name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A string that denotes an entity&#39;s name. This is the basic scale used for NominalScale variables where there no effective restrictions on the values allowed in the scale and the criteria for determining if two values are the same is if the names match. </obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/ncbi-taxonomy-ontology -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/ncbi-taxonomy-ontology">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.HierarchicalScale"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdfs:label xml:lang="en">ncbi-taxonomy-ontology</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">This scale denotes the </obo:IAO_0000115>
+        <hierarchicalValues rdf:resource="http://bmkeg.isi.edu/ooevv/NCBITaxon:131567"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/neutralization-parameters -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/neutralization-parameters">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Neutralization-Parameters</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Parameters important for a Neutralization assay (An assay to measure the presence and concentration of neutralizing antibodies in response to activation by a specific antigen)</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/neutralization-parameters.cells-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/neutralization-parameters.cells-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Neutralization-Parameters-Cells name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Cells protected by neutralizing antibodies </obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/neutralization-parameters.epitope-antigen-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/neutralization-parameters.epitope-antigen-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Neutralization-Parameters-Epitope/Antigen  Name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Viral element (antigen/epitope) that is recognized by immune cells before secreting neutralizing antibodies</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/neutralizing-antibody-concentration -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/neutralizing-antibody-concentration">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Neutralizing-antibody-concentration</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The amount of neutralizing antibody in a given sample as indicated after a spectrophotometric analysis</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/count"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/neutralizing-antibody-titers -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/neutralizing-antibody-titers">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Neutralizing-antibody-titers</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">1: Reciprocal of the plasma dilution at which 50% cells are protected from virus-mediated killing. 2: Reciprocal of the serum dilution at which the synthesis of the viral element is reduced to 80% relative to a negative control serum.</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/numeric-ratio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/neutralizing-index-presence -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/neutralizing-index-presence">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Neutralizing-index presence</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Lowest dilution of plasma that is able to produce neutralizing antibodies to effectively stop virus from infecting/killing cells</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/presence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/nhp-id -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/nhp-id">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">NHP-ID</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Identification tag for non-human primate experimental subject.</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/id-value"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/numeric-ratio -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/numeric-ratio">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.DecimalScale"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdfs:label xml:lang="en">Numeric Ratio</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A floating point value denoting a ratio between two other variables. Typically, this does not have units.</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/obo:VO_0000001 -->
+
+    <owl:NamedIndividual rdf:about="&obo2;VO_0000001">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.terminology.model.Term"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/obo:VO_0000137 -->
+
+    <owl:NamedIndividual rdf:about="&obo2;VO_0000137">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.terminology.model.Term"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/obo:VO_0000150 -->
+
+    <owl:NamedIndividual rdf:about="&obo2;VO_0000150">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.terminology.model.Term"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/obo:VO_0000249 -->
+
+    <owl:NamedIndividual rdf:about="&obo2;VO_0000249">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.terminology.model.Term"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/optical-density -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/optical-density">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.DecimalScale"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdfs:label xml:lang="en">Optical density</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Optical density (OD) values are produced when a colored solution absorbs transmitted light (of certain wavelength). OD values provide an indication of the amount of color, which is proportional to the amount of substrate bound (such as antibody concentration) (http://en.wikipedia.org/wiki/Absorbance)</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">Wikipedia: In spectroscopy, the absorbance (also called optical density[2][3]) of a material is a logarithmic ratio of the radiation falling upon a material, to the radiation transmitted through a material.[4] Absorbance measurements are often carried out in analytical chemistry. Also known as &#39;optical-density&#39;. http://en.wikipedia.org/wiki/Absorbance</obo:IAO_0000115>
+        <measures rdf:resource="&ddi;optical_density_reading"/>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/numeric-ratio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/part-of-neuron -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/part-of-neuron">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NominalScaleWithAllowedTerms"/>
+        <rdfs:label xml:lang="en">part-of-neuron</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+        <nominalValues rdf:resource="http://bmkeg.isi.edu/ooevv/part-of-neuron-cells"/>
+        <nominalValues rdf:resource="http://bmkeg.isi.edu/ooevv/part-of-neuron-dendrites"/>
+        <nominalValues rdf:resource="http://bmkeg.isi.edu/ooevv/part-of-neuron-fibers"/>
+        <nominalValues rdf:resource="http://bmkeg.isi.edu/ooevv/part-of-neuron-terminals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/part-of-neuron-cells -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/part-of-neuron-cells">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.NominalValue"/>
+        <rdfs:label xml:lang="en">part-of-neuron = cellular</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The cell bodies of neurons</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/part-of-neuron-dendrites -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/part-of-neuron-dendrites">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.NominalValue"/>
+        <rdfs:label xml:lang="en">part-of-neuron = dendrites</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The dendritic fibers of neurons</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/part-of-neuron-fibers -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/part-of-neuron-fibers">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.NominalValue"/>
+        <rdfs:label xml:lang="en">part-of-neuron = fibers</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The fibers of neurons</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/part-of-neuron-terminals -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/part-of-neuron-terminals">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.NominalValue"/>
+        <rdfs:label xml:lang="en">part-of-neuron = terminals</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Axonal fibers with characteristics of a terminal region, heavy branching and the presence of boutons labelled.</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/peptide-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/peptide-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Peptide name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A peptide is a short polymer of amino acids linked by peptide bonds</obo:IAO_0000115>
+        <measures rdf:resource="http://bmkeg.isi.edu/ooevv/CHEBI:16670"/>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/percent-specific-lysis -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/percent-specific-lysis">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">percent-specific-lysis</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The ratio of (a) chromium release by cytotoxic T-cell mediated lysis of target cells to (b) chromium release by non-specific lysis of target cells in a CTL assay</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/numeric-ratio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/percent-tetramer-positive-cells -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/percent-tetramer-positive-cells">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">percent-Tetramer-positive-cells</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The numbers of T cells that recognize and bind a specific tetramer in a given tissue sample </obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/percentage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/percentage -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/percentage">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.DecimalScale"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdfs:label xml:lang="en">Percentage score</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A ratio score, denoted as a percentage (i.e. the ratio score multiplied by 100 and followed with a &#39;%&#39; sign).</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/presence -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/presence">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.BinaryScaleWithNamedValues"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdfs:label xml:lang="en">presence</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">Is a property absent or present?</obo:IAO_0000115>
+        <falseValue rdf:resource="http://bmkeg.isi.edu/ooevv/presence-false-absent"/>
+        <trueValue rdf:resource="http://bmkeg.isi.edu/ooevv/presence-true-present"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/presence-false-absent -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/presence-false-absent">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.BinaryValue"/>
+        <rdfs:label xml:lang="en">false (absent)</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The binary measurement denotes the absense of a quality or effect</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/presence-true-present -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/presence-true-present">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.BinaryValue"/>
+        <rdfs:label xml:lang="en">true (present)</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The binary measurement denotes the presence of a quality or effect</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/primer-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/primer-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Primer name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A primer is a strand of nucleic acid that serves as a starting point for DNA synthesis</obo:IAO_0000115>
+        <measures rdf:resource="http://bmkeg.isi.edu/ooevv/SO:0000112"/>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/probe-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/probe-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Probe name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A probe is a labeled fragment of DNA/RNA that is used to detect specific nucleotide sequences in DNA/RNA samples</obo:IAO_0000115>
+        <measures rdf:resource="http://bmkeg.isi.edu/ooevv/CHEBI:50406"/>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/proliferation-parameters -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/proliferation-parameters">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Proliferation-Parameters</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Parameters important for a proliferation assay (An assay to measure the clonal expansion of lymphocytes in response to activation by a specfic antigen)</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/proliferation-parameters.epitope-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/proliferation-parameters.epitope-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Proliferation-Parameters-Epitope name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Part of an antigen recognized by cells of the immune system, specifically T-helper cells</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/proliferative-response -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/proliferative-response">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Proliferative-response</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Qualitative measurement that describes the stimulation index in a proliferation assay</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/rank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/proviral-dna-copies -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/proviral-dna-copies">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Proviral-DNA-copies</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The number of proviral DNA copies within a given amount of host genome</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/count"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/proviral-dna-parameters -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/proviral-dna-parameters">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Proviral-DNA-Parameters</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Parameters important for a Proviral DNA diagnostic assay (An assay to determine the presence of proviral DNA within host genome)</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/proviral-dna-presence -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/proviral-dna-presence">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Proviral-DNA-presence</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Qualitative measurement that describes the proviral DNA copies in a proviral DNA detection assay</obo:IAO_0000115>
+        <scale rdf:resource="&ooevv;rank-ordinal-strength"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/rank -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/rank">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.OrdinalScale"/>
+        <rdfs:label xml:lang="en">Ranks</rdfs:label>
+        <rdfs:label xml:lang="en">rank</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">An integer denoting the rank order of a value in a list. This is the basic scale used for OrdinalScale variables where the values simply denote an ordered list with no specified maximum and no explicitly-defined semantic categories associated with each rank. </obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/stimulation-index -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/stimulation-index">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Stimulation-index</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Ratio of (a) radioactive thymidine incorporation into cellular DNA by antigen-stimulated cells to  that by (b) non-stimulation cells</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/numeric-ratio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/tax-cat -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/tax-cat">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">taxonomic-category</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Designation of taxonomic specification from the NCBI&#39;s taxonomy database</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/ncbi-taxonomy-ontology"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/tcell-counts -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/tcell-counts">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Tcell-counts</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Qualitative measurement that describes the T cell numbers in a FACS assay</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/rank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/tcell-numbers -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/tcell-numbers">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Tcell-numbers</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Number of cells in a given sample</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/count"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/tetramer-binding -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/tetramer-binding">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Tetramer-binding</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Qualitative measurement that describes the %Tetramer-positive cells in a tetramer binding assay</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/rank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/tetramer-parameters -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/tetramer-parameters">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Tetramer-Parameters</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Parameters important for a tetramer assay (An assay to measure the number of cells that recognize a particular epitope in a tetramer)</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/tetramer-parameters.tetramer-type-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/tetramer-parameters.tetramer-type-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Tetramer-Parameters-Tetramer-type name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">MHC tetramers are reagents consisting of four MHC molecules bound to an antigen peptide of interest. The MHC molecules are tagged with a labeling agent such as biotin</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/time-in-weeks -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/time-in-weeks">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.DecimalScale"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdfs:label xml:lang="en">Time in weeks</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A floating-point number denoting a period of time measured in weeks (where one week equals 7 days, 7x24=168 hours, 7x24x60=10080 minutes, or 7x24x60x60=604800 seconds).</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/tissue -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/tissue">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.HierarchicalScale"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdfs:label xml:lang="en">Tissue</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Anatomical structure which has as its parts cells of predominantly one type with or without intercellular matrix. Examples: epithelium, muscle tissue, connective tissue, neural tissue, lymphoid tissue.</obo:IAO_0000115>
+        <hierarchicalValues rdf:resource="&fma;Portion_of_tissue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/tissue-type -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/tissue-type">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Tissue-type</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Type of tissue used for assays</obo:IAO_0000115>
+        <measures rdf:resource="&fma;Portion_of_tissue"/>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/tissue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.NominalScaleWithAllowedTerms"/>
+        <rdfs:label xml:lang="en">tract-tracing-chemicals</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+        <nominalValues rdf:resource="http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals-CT"/>
+        <nominalValues rdf:resource="http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals-FluoroBeads"/>
+        <nominalValues rdf:resource="http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals-FluoroDyes"/>
+        <nominalValues rdf:resource="http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals-HRP"/>
+        <nominalValues rdf:resource="http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals-PHAL"/>
+        <nominalValues rdf:resource="http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals-TAA"/>
+        <nominalValues rdf:resource="http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals-Viruses"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals-CT -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals-CT">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.NominalValue"/>
+        <rdfs:label xml:lang="en">tract-tracing-chemicals = Cholera Toxin</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Cholera Toxin used as a retrograde tracer</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals-FluoroBeads -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals-FluoroBeads">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.NominalValue"/>
+        <rdfs:label xml:lang="en">tract-tracing-chemicals = Fluorescent Beads</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The class of any fluorescent beads used as tracers in tract-tracing experiments</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals-FluoroDyes -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals-FluoroDyes">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.NominalValue"/>
+        <rdfs:label xml:lang="en">tract-tracing-chemicals = Fluorescent dyes</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The class of any fluorescent dyes used as tract-tracers</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals-HRP -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals-HRP">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.NominalValue"/>
+        <rdfs:label xml:lang="en">tract-tracing-chemicals = Horseradish peroxidase (HRP)</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Horseradish Peroxidase used as a retrograde tracer</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals-PHAL -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals-PHAL">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.NominalValue"/>
+        <rdfs:label xml:lang="en">tract-tracing-chemicals = Phaseolus Leuco-Agglutinin</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Phaseolus Leuco-Agglutinin (Gerfen and Sawchenko 1984) used as a tract-tracing chemical </obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals-TAA -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals-TAA">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.NominalValue"/>
+        <rdfs:label xml:lang="en">tract-tracing-chemicals = Tritiated amino acids</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The class of tritiated amino acids used as a tracer chemical in tract tracing experiments</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals-Viruses -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals-Viruses">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.NominalValue"/>
+        <rdfs:label xml:lang="en">tract-tracing-chemicals = Viruses</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The class of viruses used as a tract-tracing chemical (pseudorabies virus is one possible virus).</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/tract-tracing-experimental-variables -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/tract-tracing-experimental-variables">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariableSet"/>
+        <rdfs:label xml:lang="en">Tract-tracing experimental variables</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">These are the variables used within tract-tracing experiments to describe neuroanatomical projections. These variables form the basis of the originating KEfED model described in Russ et al. 2011. They are designed to provide a minimum necessary description of a tract-tracing experiment so that it can be correctly interpreted; they are not exhaustive. </obo:IAO_0000115>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/his-lab"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/his-lab-dens"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/his-lab-loc"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/his-lab-pres"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/his-lab-type"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/tax-cat"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/tte-inj"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/tte-inj-chem"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/tte-inj-loc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/tte-inj -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/tte-inj">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">tract-tracer-injection</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A composite variable describing the parameters associated with an injection of a substance into an anatomical structure of a living organism.  </obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/tte-inj-chem -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/tte-inj-chem">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">tract-tracer-injection.chemical</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The chemical substance being injected as part of a tract-tracer injection</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/tract-tracing-chemicals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/tte-inj-loc -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/tte-inj-loc">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">tract-tracer-injection.location</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The extent of the complete injection site to identified brain structures from the Swanson atlas and encoded into the neuroanatomical nomenclature specified from the BAMS system </obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/brain-volume-location"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/vaccine-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/vaccine-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Vaccine Name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A vaccine is a substance used to stimulate the production of antibodies and provide immunity against one or several diseases. It is prepared from the causative agent of a disease, its products, or a synthetic substitute, treated to act as an antigen without inducing the disease. </obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+        <measures rdf:resource="&obo2;VO_0000001"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/vaccine-protection-study-variables -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/vaccine-protection-study-variables">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariableSet"/>
+        <rdfs:label xml:lang="en">Vaccine protection study variables</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The variables used in immunological studies of the effectiveness of vaccines to elicit an immune response.</obo:IAO_0000115>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/Neutralization-antibody-response"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/adjuvant-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/antibody-concentration"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/antibody-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/antibody-optical-density"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/antibody-response"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/antibody-titers"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/antigen-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/antigenemia-concentration"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/antigenemia-presence"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/challenge-route"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/challenge-virus"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/co-stimulant-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/ctl-parameters"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/ctl-parameters.co-stimulant-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/ctl-parameters.epitope-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/ctl-response"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/cytokine-concentration"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/cytokine-response"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/elipsot-numbers"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/elipsot-parameters"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/elipsot-parameters.cytokine-ab-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/elipsot-parameters.peptide-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/elipsot-response"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/elisa-parameters"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/elisa-parameters.antibody-type-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/elisa-parameters.antigen-type-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/elisa-parameters.antigenemia-type-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/elisa-parameters.cytokine-type-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/epitope-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/experiment-timeline-weeks"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/facs-parameters"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/facs-parameters-cell-type-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/facs-parameters-cytokine-ab-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/facs-parameters-epitope-Antigen-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/immunization-route"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/mean-viral-rna-copies"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/neutralization-parameters"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/neutralization-parameters.cells-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/neutralization-parameters.epitope-antigen-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/neutralizing-antibody-concentration"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/neutralizing-antibody-titers"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/neutralizing-index-presence"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/nhp-id"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/optical-density"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/peptide-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/percent-specific-lysis"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/percent-tetramer-positive-cells"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/primer-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/probe-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/proliferation-parameters"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/proliferation-parameters.epitope-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/proliferative-response"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/proviral-dna-copies"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/proviral-dna-parameters"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/proviral-dna-presence"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/stimulation-index"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/tcell-counts"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/tcell-numbers"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/tetramer-binding"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/tetramer-parameters"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/tetramer-parameters.tetramer-type-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/tissue-type"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/vaccine-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/viral-load"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/viral-load-parameters"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/viral-load-parameters.primers-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/viral-load-parameters.probes-name"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/viral-load-strength"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/viral-rna-copies"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/virus-antigen-presence"/>
+        <exptVbs rdf:resource="http://bmkeg.isi.edu/ooevv/virus-antigen-titers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/viral-load -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/viral-load">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Viral-load</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Qualitative evaluation that describes the viral RNA copies in a viral load assay</obo:IAO_0000115>
+        <scale rdf:resource="&ooevv;rank-ordinal-strength"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/viral-load-parameters -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/viral-load-parameters">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Viral-load-Parameters</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Parameters important for a viral load assay (An assay to determines the concentration of viral RNA in a given tissue sample)</obo:IAO_0000115>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/viral-load-parameters.primers-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/viral-load-parameters.primers-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Viral-load-Parameters.primers name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Primers that specifically amplify viral RNA sequences</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/viral-load-parameters.probes-name -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/viral-load-parameters.probes-name">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Viral-load-Parameters.probes name</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Probes that attach to specific viral RNA sequences</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/viral-load-strength -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/viral-load-strength">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Viral-load-mean</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Qualitative evaluation that describes the mean of the viral RNA copies in a viral load assay</obo:IAO_0000115>
+        <scale rdf:resource="&ooevv;rank-ordinal-strength"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/viral-rna-copies -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/viral-rna-copies">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Viral-RNA-copies</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The number of viral RNA particles in a given tissue sample</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/count"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/virus-antigen-presence -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/virus-antigen-presence">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Virus/antigen-presence</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Qualitative evaluation that describes the virus/antigen titers in an ELISA assay </obo:IAO_0000115>
+        <scale rdf:resource="&ooevv;rank-ordinal-strength"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/ooevv/virus-antigen-titers -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/ooevv/virus-antigen-titers">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.ExperimentalVariable"/>
+        <rdfs:label xml:lang="en">Virus/antigen-titers</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The lowest concentration of virus that can still infect cells</obo:IAO_0000115>
+        <scale rdf:resource="http://bmkeg.isi.edu/ooevv/mass-concentration"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="CHEBI:59132">
+        <rdfs:label xml:lang="en">antigen</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Any substance that stimulates an immune response in the body, such as through antibody production or by presentation to a T-cell receptor after binding to a major histocompability complex (MHC).</obo:IAO_0000115>
+    </rdf:Description>
+    <rdf:Description rdf:about="CHEBI:16670">
+        <rdfs:label xml:lang="en">peptide</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Amide derived from two or more amino carboxylic acid molecules (the same or different) by formation of a covalent bond from the carbonyl carbon of one to the nitrogen atom of another with formal loss of water. The term is usually applied to structures formed from alpha-amino acids, but it includes those derived from any amino carboxylic acid.</obo:IAO_0000115>
+    </rdf:Description>
+    <rdf:Description rdf:about="obo:VO_0000150">
+        <rdfs:label xml:lang="en">antibody titer</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Reagents used in cytologic assays performed by flow cytometers. They include labels for cell membranes and standards to normalize instrument setup, cell count, and proliferation. These reagents are frequently available in kits that allow the calibration, control, and standardization of flow cytometry analysis.</obo:IAO_0000115>
+    </rdf:Description>
+    <rdf:Description rdf:about="obo:VO_0000001">
+        <rdfs:label xml:lang="en">vaccine</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">]</obo:IAO_0000115>
+    </rdf:Description>
+    <rdf:Description rdf:about="CHEBI:50406">
+        <rdfs:label xml:lang="en">probe</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A role played by a molecular entity used to study the microscopic environment.</obo:IAO_0000115>
+    </rdf:Description>
+    <rdf:Description rdf:about="obo:VO_0000137">
+        <rdfs:label xml:lang="en">adjuvant role</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">]</obo:IAO_0000115>
+    </rdf:Description>
+    <rdf:Description rdf:about="SO:0000112">
+        <rdfs:label xml:lang="en">primer</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">An oligo to which new deoxyribonucleotides can be added by DNA polymerase.</obo:IAO_0000115>
+    </rdf:Description>
+    <rdf:Description rdf:about="efo:EFO_0000264">
+        <rdfs:label xml:lang="en">antibody</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">An antibody function (or antigen binding function) is an infection-fighting protein molecule in blood or secretory fluids that tags, neutralizes, and helps destroy pathogenic microorganisms such as bacteria, viruses and toxins.</obo:IAO_0000115>
+    </rdf:Description>
+    <rdf:Description rdf:about="obo:VO_0000249">
+        <rdfs:label xml:lang="en">vaccine-induced antiviral neutralizing antibody response</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Amide derived from two or more amino carboxylic acid molecules (the same or different) by formation of a covalent bond from the carbonyl carbon of one to the nitrogen atom of another with formal loss of water. The term is usually applied to structures formed from alpha-amino acids, but it includes those derived from any amino carboxylic acid.</obo:IAO_0000115>
+    </rdf:Description>
+    <rdf:Description rdf:about="NCBITaxon:131567">
+        <rdfs:label xml:lang="en">cellular organisms</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="PATO:0000165">
+        <rdfs:label xml:lang="en">time</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A quality in which events occur in sequence.</obo:IAO_0000115>
+    </rdf:Description>
+    <rdf:Description rdf:about="ddi:optical_density_reading">
+        <rdfs:label xml:lang="en">optical density reading</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The biological role played by a material entity when bound by a receptor of the adaptive immune system. Specific site on an antigen to which an antibody binds.</obo:IAO_0000115>
+    </rdf:Description>
+    <rdf:Description rdf:about="CHEBI:53000">
+        <rdfs:label xml:lang="en">epitope</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The biological role played by a material entity when bound by a receptor of the adaptive immune system. Specific site on an antigen to which an antibody binds.</obo:IAO_0000115>
+    </rdf:Description>
+    <rdf:Description rdf:about="fma:Portion_of_tissue">
+        <rdfs:label xml:lang="en">Portion of tissue</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Anatomical structure which has as its parts cells of predominantly one type with or without intercellular matrix. Examples: epithelium, muscle tissue, connective tissue, neural tissue, lymphoid tissue.</obo:IAO_0000115>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.1.0.1642) http://owlapi.sourceforge.net -->
+

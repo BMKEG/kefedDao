@@ -1,0 +1,922 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:obo="http://purl.obolibrary.org/obo/"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:ro="http://www.obofoundry.org/ro/ro.owl#"
+    xmlns:kefed2="http://edu.isi.bmkeg/owl/kefed/"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:kefed="http://bmkeg.isi.edu/owl/kefed/"
+    xmlns:snap="http://www.ifomis.org/bfo/1.1/snap#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://bmkeg.isi.edu/owl/kefed/">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    <protege:defaultLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >en</protege:defaultLanguage>
+    <rdfs:comment xml:lang="en">null</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000015">
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000013"/>
+    </rdfs:subClassOf>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A KEfED_Parameter that denotes an unique identifier of either a KEfED_InformationEntity or a KEfED_MaterialObject</obo:IAO_0000115>
+    <rdfs:label xml:lang="en">KEfED_IdLabel</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000007">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000003"/>
+    </rdfs:subClassOf>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A KEfED_Process that represents a material processing step (i.e. is about a obi:material processing term).</obo:IAO_0000115>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <rdfs:label xml:lang="en">KEfED_MaterialProcessing</rdfs:label>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000000"/>
+            </owl:someValuesFrom>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000022"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000004"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000004"/>
+            </owl:someValuesFrom>
+            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
+            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://edu.isi.bmkeg/owl/kefed/KEfED_000059">
+    <rdfs:label xml:lang="en">KEfED_BranchPoint</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000036"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000013">
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A KEfED_Variable that has values which are assigned before the start of an experiment (could also be called an 'independent variable', a factor, etc.).</obo:IAO_0000115>
+    <rdfs:label xml:lang="en">KEfED_Parameter</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000010"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000019">
+    <rdfs:label xml:lang="en">KEfED_Experiment</rdfs:label>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000000"/>
+            </owl:someValuesFrom>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000022"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.obofoundry.org/ro/ro.owl#has_part"/>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000020"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <obo:IAO_0000115 xml:lang="en">A container for the data and statistical assertions from a specific experiment (the design of which has been described with a KEfED model).</obo:IAO_0000115>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000005">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000004"/>
+            </owl:someValuesFrom>
+            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000002"/>
+            </owl:someValuesFrom>
+            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+            <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A KEfED_Process that represents an assay (i.e., is about an obi:assay term)</obo:IAO_0000115>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <rdfs:label xml:lang="en">KEfED_Assay</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000003"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000027">
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A mean value statistically derived from a set of KEfED_MeasurementValues associated with a KEfED_Measurement.</obo:IAO_0000115>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <rdfs:label xml:lang="en">KEfED_StatisticalMeanValue</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000033"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000025"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000025">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000029"/>
+            </owl:onProperty>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000012"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000031"/>
+            </owl:onProperty>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000028"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000024"/>
+    </rdfs:subClassOf>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A value of a KEfED_Measurement (associated with a KEfED_MeasurementContext)</obo:IAO_0000115>
+    <rdfs:label xml:lang="en">KEfED_MeasurementValue</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000043">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000053"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000055"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000038"/>
+    </rdfs:subClassOf>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A KEfED_EndPoint that represents the end of a looping process.</obo:IAO_0000115>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <rdfs:label xml:lang="en">KEfED_LoopEndPoint</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000055">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000003"/>
+    </rdfs:subClassOf>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000115>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A KEfED_Process that represents the process that loops over a iterating KEfED_Variable.</obo:IAO_0000115>
+    <rdfs:label xml:lang="en">KEfED_Loop</rdfs:label>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000039"/>
+            </owl:someValuesFrom>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000049"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000043"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000051"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://edu.isi.bmkeg/owl/kefed/KEfED_000060">
+    <rdfs:label xml:lang="en">KEfED_ForkPoint</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000036"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000046">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000003"/>
+    </rdfs:subClassOf>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A KEfED_Process that represents the complete process of the execution of an experiment.</obo:IAO_0000115>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000000"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000057"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:label xml:lang="en">KEfED_CompleteExperimentWorkflow</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000038">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000036"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">KEfED_EndPoint</rdfs:label>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A KEfED_ProcessFlowPoint that represents the end of a process.</obo:IAO_0000115>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000003"/>
+            </owl:someValuesFrom>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000053"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000042"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000036">
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000003"/>
+    </rdfs:subClassOf>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A KEfEDModelElement that represents a process that determines how another enclosing process executes.</obo:IAO_0000115>
+    <rdfs:label xml:lang="en">KEfED_ProcessFlowPoint</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000034">
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A statistically derived correlation between two sets of KEfED_MeasurementValues.</obo:IAO_0000115>
+    <rdfs:label xml:lang="en">KEfED_StatisticalCorrelation</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000033"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000001">
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An entity that forms part of a 'KEfED' model.</obo:IAO_0000115>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000000"/>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="http://www.obofoundry.org/ro/ro.owl#part_of"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <rdfs:label xml:lang="en">KEfED_ModelElement</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000017">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000018"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000010"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A specfication of the values associated with a KEfED_Variable.</obo:IAO_0000115>
+    <rdfs:label xml:lang="en">KEfED_Scale</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000001"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000003">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000049"/>
+            </owl:onProperty>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000037"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000051"/>
+            </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000038"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000023"/>
+            </owl:onProperty>
+            <owl:allValuesFrom>
+              <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000010"/>
+            </owl:allValuesFrom>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:allValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000003"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000047"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:allValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000003"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000048"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:allValuesFrom>
+              <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000042"/>
+            </owl:allValuesFrom>
+            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+            <owl:allValuesFrom>
+              <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000042"/>
+            </owl:allValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A KEfEDModelElement that represents a process.</obo:IAO_0000115>
+    <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000001"/>
+    <rdfs:label xml:lang="en">KEfED_Process</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000010">
+    <rdfs:label xml:lang="en">KEfED_Variable</rdfs:label>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Restriction>
+                <owl:onProperty>
+                  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000011"/>
+                </owl:onProperty>
+                <owl:allValuesFrom>
+                  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000002"/>
+                </owl:allValuesFrom>
+              </owl:Restriction>
+              <owl:Restriction>
+                <owl:allValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000003"/>
+                <owl:onProperty>
+                  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000011"/>
+                </owl:onProperty>
+              </owl:Restriction>
+              <owl:Restriction>
+                <owl:onProperty>
+                  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000011"/>
+                </owl:onProperty>
+                <owl:allValuesFrom>
+                  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000004"/>
+                </owl:allValuesFrom>
+              </owl:Restriction>
+            </owl:unionOf>
+          </owl:Class>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000016"/>
+            </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000017"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000024"/>
+            </owl:someValuesFrom>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000030"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000109"/>
+            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A KEfED_ModelElement that represents a 'measurement datum' (IAO_0000107: a data item that links to a quality).</obo:IAO_0000115>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000001"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000012">
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A KEfED_Variable that has a value that is either measured or calculated during the course of an experiment.</obo:IAO_0000115>
+    <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000010"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000002"/>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="http://www.obofoundry.org/ro/ro.owl#part_of"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:label xml:lang="en">KEfED_Measurement</rdfs:label>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000006">
+    <rdfs:label xml:lang="en">KEfED_DataTransformation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000003"/>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000002"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000002"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0200000"/>
+            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A KEfED_Process that represents a data transformation (i.e. is about an 'obi:data transformation' term).</obo:IAO_0000115>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000014">
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A KEfED_Parameter that has a value which is kept contstant over the course of an experiment.</obo:IAO_0000115>
+    <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000013"/>
+    <rdfs:label xml:lang="en">KEfED_Constant</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000004">
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A KEfED_ModelElement that represents a material entity (bfo:material_entity). </obo:IAO_0000115>
+    <rdfs:label xml:lang="en">KEfED_MaterialEntity</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000042"/>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000295"/>
+                <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000005"/>
+              </owl:Restriction>
+              <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000295"/>
+                <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000007"/>
+              </owl:Restriction>
+              <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000295"/>
+                <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000038"/>
+              </owl:Restriction>
+            </owl:unionOf>
+          </owl:Class>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000007"/>
+              </owl:Restriction>
+              <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                <owl:someValuesFrom>
+                  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000037"/>
+                </owl:someValuesFrom>
+              </owl:Restriction>
+            </owl:unionOf>
+          </owl:Class>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+            <owl:allValuesFrom rdf:resource="http://www.ifomis.org/bfo/1.1/snap#MaterialEntity"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000042">
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000001"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >We do not use the distinction between independent and dependent continuents here. A KEfED_Entity may represent an information artifact or a material entity.</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A KEfED_ModelElement that represents an continuant (bfo:continuant) in a scientific workflow.</rdfs:comment>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000295"/>
+            <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000003"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000003"/>
+            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000023"/>
+            </owl:onProperty>
+            <owl:allValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000010"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:label xml:lang="en">KEfED_Entity</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000024">
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000029"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000010"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:label xml:lang="en">KEfED_VariableValue</rdfs:label>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A value of a KEfED_Variable.</obo:IAO_0000115>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000020"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000026">
+    <rdfs:label xml:lang="en">KEfED_ParameterValue</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000024"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000029"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000013"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A value of a KEfED_Parameter.</obo:IAO_0000115>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000020">
+    <obo:IAO_0000115 xml:lang="en">A compositional part of a KEfED experiment.</obo:IAO_0000115>
+    <rdfs:label xml:lang="en">KEfED_ExperimentElement</rdfs:label>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000019"/>
+        <owl:onProperty rdf:resource="http://www.obofoundry.org/ro/ro.owl#part_of"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000037">
+    <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000036"/>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000003"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000052"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+            <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000042"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:label xml:lang="en">KEfED_StartPoint</rdfs:label>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A KEfED_ProcessFlowPoint that represents the start of a process.</obo:IAO_0000115>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000039">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000052"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000055"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:label xml:lang="en">KEfED_LoopStartPoint</rdfs:label>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A KEfED_StartPoint that represents the start of a looping process.</obo:IAO_0000115>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000037"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000028">
+    <rdfs:label xml:lang="en">KEfED_MeasurementContext</rdfs:label>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000026"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000023"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000032"/>
+            </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000025"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <obo:IAO_0000115 xml:lang="en">A set of KEfED_Variable instances that describe the conditions under which measurement are made within a specific experiment.</obo:IAO_0000115>
+    <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000020"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000035">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000033"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">KEfED_StatisticalRelation</rdfs:label>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A statistical relation between two KEfED_MeasurementValue instances associated with a single KEfED variable and that were measured under two different KEfED_MeasurementContexts.</obo:IAO_0000115>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000000">
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A knowledge representation describing the design of a scientific experiment formulated based on the 'Knowledge Engineering from Experimental Design' model (KEfED). This includes (a) a representation of the design of the experiment, (b) a representation of the types of data measured in the experiment and (c) a representation of the types of observational assertions made within the experiment. </obo:IAO_0000115>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000046"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000056"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000001"/>
+            <owl:onProperty rdf:resource="http://www.obofoundry.org/ro/ro.owl#has_part"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000021"/>
+            </owl:onProperty>
+            <owl:allValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000019"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:label xml:lang="en">KEfED_Model</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000002">
+    <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A KEfED_ModelElement that represents an information entity that is processed over the course of an experiment. </obo:IAO_0000115>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+    <rdfs:label xml:lang="en">KEfED_InformationArtifact</rdfs:label>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Restriction>
+                <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000006"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000295"/>
+              </owl:Restriction>
+              <owl:Restriction>
+                <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000038"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000295"/>
+              </owl:Restriction>
+            </owl:unionOf>
+          </owl:Class>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000005"/>
+              </owl:Restriction>
+              <owl:Restriction>
+                <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000006"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+              </owl:Restriction>
+              <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                <owl:someValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000037"/>
+              </owl:Restriction>
+            </owl:unionOf>
+          </owl:Class>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+            <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:allValuesFrom rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000012"/>
+            <owl:onProperty rdf:resource="http://www.obofoundry.org/ro/ro.owl#has_part"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This entity represents the actual informational encoding of the data generated in an experiment (including the data format and the other details). This is distinct from KEfED_Measurement classes that designate the variables (i.e. the underlying information that are contained within an individual KEfED_InformationArtifact). 
+
+It is likely that this information may be 'anonymous' in many instances, meaning that it may be excessive detail to attempt to record the exact way in which data is recorded throughout the course of an experiment. In those instances then we may collapse the KEfED_InformationArtifact and KEfED_Measurement entities together into a single representation within the application (but maintaining the separation in the underlying KEfED_Model).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000042"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000033">
+    <rdfs:label xml:lang="en">KEfED_ObservationalAssertion</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000020"/>
+    <obo:IAO_0000115 xml:lang="en">Statistical observations derived from an specific scientific experiment expressed within the KEfED modeling formalism.</obo:IAO_0000115>
+    <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gully A. P. C. Burns</obo:IAO_0000117>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000023">
+    <rdfs:subPropertyOf rdf:resource="http://www.obofoundry.org/ro/ro.owl#has_participant"/>
+    <rdfs:label xml:lang="en">has_parameter</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000053">
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label xml:lang="en">ends</rdfs:label>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000051"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000022">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000021"/>
+    </owl:inverseOf>
+    <rdfs:label xml:lang="en">has_kefed_model</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000052">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:label xml:lang="en">starts</rdfs:label>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000049"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000051">
+    <rdfs:label xml:lang="en">ends_with</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000011">
+    <rdfs:label xml:lang="en">parameterizes</rdfs:label>
+    <owl:inverseOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000023"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.obofoundry.org/ro/ro.owl#participates_in"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000056">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:label xml:lang="en">has_workflow</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000057">
+    <rdfs:label xml:lang="en">is_workflow_of</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000021">
+    <rdfs:label xml:lang="en">is_kefed_model_of</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000008">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+    <rdfs:label xml:lang="en">acts_as_input_for</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000047">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:label xml:lang="en">provides_input_to</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000032">
+    <rdfs:label xml:lang="en">is_context_of</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000009">
+    <rdfs:label xml:lang="en">acts_as_output_for</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000030">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000029"/>
+    </owl:inverseOf>
+    <rdfs:label xml:lang="en">has_value</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000029">
+    <rdfs:label xml:lang="en">has_variable</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000031">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:label xml:lang="en">has_context</rdfs:label>
+    <owl:inverseOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000032"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000048">
+    <rdfs:label xml:lang="en">receives_input_from</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000018">
+    <rdfs:label xml:lang="en">is_scale_of</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000016"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000049">
+    <rdfs:label xml:lang="en">starts_with</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000016">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:label xml:lang="en">has_scale</rdfs:label>
+  </owl:ObjectProperty>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+    <kefed2:KEfED_000063 xml:lang="en"></kefed2:KEfED_000063>
+  </rdf:Description>
+  <owl:AnnotationProperty rdf:about="http://edu.isi.bmkeg/owl/kefed/KEfED_000061">
+    <rdfs:label xml:lang="en">uid</rdfs:label>
+  </owl:AnnotationProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.6, Build 613)  http://protege.stanford.edu -->

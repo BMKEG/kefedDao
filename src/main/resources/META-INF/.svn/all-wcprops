@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/repository/!svn/ver/4173/code/kefed/trunk/library/src/main/resources/META-INF
+END
+context.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/repository/!svn/ver/5040/code/kefed/trunk/library/src/main/resources/META-INF/context.xml
+END
+persistence.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/repository/!svn/ver/5040/code/kefed/trunk/library/src/main/resources/META-INF/persistence.xml
+END

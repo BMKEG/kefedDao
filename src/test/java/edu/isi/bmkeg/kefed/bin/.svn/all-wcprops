@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/repository/!svn/ver/5040/code/kefed/trunk/library/src/test/java/edu/isi/bmkeg/kefed/bin
+END
+BuildKefedDatabaseTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/repository/!svn/ver/5040/code/kefed/trunk/library/src/test/java/edu/isi/bmkeg/kefed/bin/BuildKefedDatabaseTest.java
+END
+OoevvDirToDatabaseTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/repository/!svn/ver/5040/code/kefed/trunk/library/src/test/java/edu/isi/bmkeg/kefed/bin/OoevvDirToDatabaseTest.java
+END
+OoEVVSpreadsheetToOWLTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/repository/!svn/ver/5040/code/kefed/trunk/library/src/test/java/edu/isi/bmkeg/kefed/bin/OoEVVSpreadsheetToOWLTest.java
+END
+OoEVVSpreadsheetToDatabaseTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/repository/!svn/ver/5040/code/kefed/trunk/library/src/test/java/edu/isi/bmkeg/kefed/bin/OoEVVSpreadsheetToDatabaseTest.java
+END

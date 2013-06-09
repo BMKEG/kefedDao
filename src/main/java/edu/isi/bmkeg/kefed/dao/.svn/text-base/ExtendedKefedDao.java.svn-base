@@ -1,0 +1,22 @@
+package edu.isi.bmkeg.kefed.dao;
+
+import java.util.List;
+import java.util.Map;
+
+import edu.isi.bmkeg.kefed.model.KefedModel;
+import edu.isi.bmkeg.ooevv.dao.OoevvDao;
+import edu.isi.bmkeg.vpdmf.model.instances.LightViewInstance;
+
+public interface KefedDao extends OoevvDao {
+
+	public List<LightViewInstance> listAllKefedModels() throws Exception;
+
+	public void insertKefedModel(KefedModel kefed) throws Exception;
+
+	public KefedModel retrieveModel(String uid) throws Exception;
+
+	public void saveModel(KefedModel kefed) throws Exception;
+
+	public boolean deleteModel(String uuid) throws Exception;
+	
+}

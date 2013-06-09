@@ -1,0 +1,387 @@
+package edu.isi.bmkeg.kefed.dao;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.apache.log4j.Logger;
+
+import edu.isi.bmkeg.kefed.model.KefedModel;
+import edu.isi.bmkeg.kefed.model.KefedModelEdge;
+import edu.isi.bmkeg.kefed.model.KefedModelElement;
+import edu.isi.bmkeg.ooevv.dao.OoevvDaoImpl;
+import edu.isi.bmkeg.vpdmf.model.definitions.ViewDefinition;
+import edu.isi.bmkeg.vpdmf.model.instances.LightViewInstance;
+import edu.isi.bmkeg.vpdmf.model.instances.PrimitiveInstance;
+import edu.isi.bmkeg.vpdmf.model.instances.ViewBasedObjectGraph;
+import edu.isi.bmkeg.vpdmf.model.instances.ViewInstance;
+
+public class KefedDaoImpl extends OoevvDaoImpl implements KefedDao {
+
+	private static Logger logger = Logger.getLogger(KefedDaoImpl.class);
+
+	public KefedDaoImpl() throws Exception {
+
+		super();
+	
+	}
+	
+	@Override
+	public List<LightViewInstance> listAllKefedModels() throws Exception {
+
+		return this.listAllViews("KefedModel");
+
+	}
+
+	@Override
+	public void insertKefedModel(KefedModel kefed) throws Exception {
+		
+		this.generateVbogs();
+
+		try {
+
+			getCe().connectToDB();
+			getCe().turnOffAutoCommit();
+
+			//
+			// 1. insert each model element of the KefedModel as needed
+			//
+			Iterator<KefedModelElement> elIt = kefed.getElements().iterator();
+			while( elIt.hasNext() ) {
+				KefedModelElement el = elIt.next();
+				
+				ViewBasedObjectGraph vbog = getVbogs().get(el.getElementType());
+
+				ViewInstance vi = vbog.objectGraphToView(el);
+				Map<String, Object> objMap = vbog.getObjMap();
+
+				getCe().executeInsertQuery(vi);
+
+				Iterator<String> keyIt = objMap.keySet().iterator();
+				while (keyIt.hasNext()) {
+					String key = keyIt.next();
+					PrimitiveInstance pi = (PrimitiveInstance) vi.getSubGraph()
+							.getNodes().get(key);
+					Object o = objMap.get(key);
+					vbog.primitiveToObject(pi, o, true);
+				}
+				
+			}
+			
+			//
+			// 2. insert each kefed model edge as needed
+			//
+			Iterator<KefedModelEdge> edIt = kefed.getEdges().iterator();
+			while( edIt.hasNext() ) {
+				KefedModelEdge ed = edIt.next();
+				
+				ViewBasedObjectGraph vbog = getVbogs().get("KefedModelEdge");
+
+				ViewInstance vi = vi = vbog.objectGraphToView(ed);
+				Map<String, Object> objMap = vbog.getObjMap();
+
+				getCe().executeInsertQuery(vi);
+
+				Iterator<String> keyIt = objMap.keySet().iterator();
+				while (keyIt.hasNext()) {
+					String key = keyIt.next();
+					PrimitiveInstance pi = (PrimitiveInstance) vi.getSubGraph()
+							.getNodes().get(key);
+					Object o = objMap.get(key);
+					vbog.primitiveToObject(pi, o, true);
+				}
+				
+			}
+
+			//
+			// 3. insert the KefedModel as a view
+			//
+			ViewBasedObjectGraph vbog = getVbogs().get("KefedModel");
+			ViewInstance vi = vbog.objectGraphToView(kefed);
+			Map<String, Object> objMap = vbog.getObjMap();
+
+			getCe().executeInsertQuery(vi);
+
+			Iterator<String> keyIt = objMap.keySet().iterator();
+			while (keyIt.hasNext()) {
+				String key = keyIt.next();
+				PrimitiveInstance pi = (PrimitiveInstance) vi.getSubGraph()
+						.getNodes().get(key);
+				Object o = objMap.get(key);
+				vbog.primitiveToObject(pi, o, true);
+			}
+
+			
+			
+			
+			getCe().commitTransaction();
+
+		} catch (Exception e) {
+
+			getCe().rollbackTransaction();
+			e.printStackTrace();
+			throw e;
+
+		} finally {
+
+			getCe().closeDbConnection();
+
+		}
+		
+	}
+	
+	@Override
+	public KefedModel retrieveModel(String uid) throws Exception {
+
+		ViewInstance vi = getCe().executeUIDQuery("KefedModel", uid);
+
+		ViewBasedObjectGraph vbog = new ViewBasedObjectGraph(getTop(), getCl(), "KefedModel");
+		
+		vbog.viewToObjectGraph(vi);
+		Map<String, Object> objMap = vbog.getObjMap();
+		Iterator<String> keyIt = objMap.keySet().iterator();
+		while (keyIt.hasNext()) {
+			String key = keyIt.next();
+			PrimitiveInstance pi = (PrimitiveInstance) vi.getSubGraph()
+					.getNodes().get(key);
+			Object o = objMap.get(key);
+			vbog.primitiveToObject(pi, o, true);
+		}
+
+		KefedModel kefed = (KefedModel) vbog.readPrimaryObject();
+
+		return kefed;
+
+	}
+
+
+	@Override
+	public void saveModel(KefedModel kefed) throws Exception {
+		
+		this.generateVbogs();
+
+		try {
+
+			getCe().connectToDB();
+			getCe().turnOffAutoCommit();
+			
+			ViewInstance vi = getCe().executeUIDQuery("KefedModel", "bmkegId=" + kefed.getBmkegId() );
+			getCe().storeViewInstanceForUpdate(vi);
+			
+			ViewBasedObjectGraph vbog = getVbogs().get("KefedModel");
+			vbog.viewToObjectGraph(vi);
+			vbog.viewToObjectGraph(vi);
+			Map<String, Object> objMap = vbog.getObjMap();
+			Iterator<String> keyIt = objMap.keySet().iterator();
+			while (keyIt.hasNext()) {
+				String key = keyIt.next();
+				PrimitiveInstance pi = (PrimitiveInstance) vi.getSubGraph()
+						.getNodes().get(key);
+				Object o = objMap.get(key);
+				vbog.primitiveToObject(pi, o, true);
+			}
+			KefedModel exist = (KefedModel) vbog.readPrimaryObject();
+			
+			Set<Long> elToRemove = new HashSet<Long>();
+			Set<Long> elToAdd = new HashSet<Long>();
+			Set<Long> edToRemove = new HashSet<Long>();
+			Set<Long> edToAdd = new HashSet<Long>();
+			
+			Map<Long,KefedModelElement> elKefed = this.createElementBmkegIdSet(kefed.getElements());
+			Map<Long,KefedModelElement> elExist = this.createElementBmkegIdSet(exist.getElements());
+			Map<Long,KefedModelEdge> edKefed = this.createEdgeBmkegIdSet(kefed.getEdges());
+			Map<Long,KefedModelEdge> edExist = this.createEdgeBmkegIdSet(exist.getEdges());
+			
+			Iterator<KefedModelElement> elIt = kefed.getElements().iterator();
+			while( elIt.hasNext() ) {
+				KefedModelElement el = elIt.next();
+				if( !elExist.keySet().contains(el.getBmkegId()) ) {
+					elToAdd.add(el.getBmkegId());
+				}
+			}
+			
+			elIt = exist.getElements().iterator();
+			while( elIt.hasNext() ) {
+				KefedModelElement el = elIt.next();
+				if( !elKefed.keySet().contains(el.getBmkegId()) ) {
+					elToRemove.add(el.getBmkegId());
+				}
+			}
+
+			Iterator<KefedModelEdge> edIt = kefed.getEdges().iterator();
+			while( edIt.hasNext() ) {
+				KefedModelEdge ed = edIt.next();
+				if( !edExist.keySet().contains(ed.getBmkegId()) ) {
+					edToAdd.add(ed.getBmkegId());
+				}
+			}
+
+			edIt = exist.getEdges().iterator();
+			while( edIt.hasNext() ) {
+				KefedModelEdge ed = edIt.next();
+				if( !edKefed.keySet().contains(ed.getBmkegId()) ) {
+					edToRemove.add(ed.getBmkegId());
+				}
+			}
+			
+			//
+			// 1. remove unused edges from database
+			//
+			Iterator<Long> it = edToRemove.iterator();
+			while( it.hasNext() ) {
+				long i = it.next();
+				getCe().deleteView("KefedModelEdge", "bmkegId=" + i);
+				logger.debug("removing edge: " + i);
+			}
+
+			//
+			// 2. remove unused elements from database
+			//
+			it = elToRemove.iterator();
+			while( it.hasNext() ) {
+				long i = it.next();
+				KefedModelElement el = elExist.get(i);
+				getCe().deleteView(el.getElementType(), "bmkegId=" + i);
+				logger.debug("removing node: " + i);				
+			}
+			
+			//
+			// 1. insert each model element of the KefedModel as needed
+			//
+			it = elToAdd.iterator();
+			while( it.hasNext() ) {
+				long i = it.next();
+				KefedModelElement el = elKefed.get(i);
+				
+				vbog = getVbogs().get(el.getElementType());
+
+				vi = vbog.objectGraphToView(el);
+				objMap = vbog.getObjMap();
+
+				getCe().executeInsertQuery(vi);
+				
+				keyIt = objMap.keySet().iterator();
+				while (keyIt.hasNext()) {
+					String key = keyIt.next();
+					PrimitiveInstance pi = (PrimitiveInstance) vi.getSubGraph()
+							.getNodes().get(key);
+					Object o = objMap.get(key);
+					vbog.primitiveToObject(pi, o, true);
+				}
+				
+			}
+
+			//
+			// 3. insert each kefed model edge as needed
+			//
+			it = edToAdd.iterator();
+			while( it.hasNext() ) {
+				long i = it.next();
+				KefedModelEdge ed = edKefed.get(i);
+				
+				vbog = getVbogs().get("KefedModelEdge");
+
+				vi = vbog.objectGraphToView(ed);
+				
+				objMap = vbog.getObjMap();
+
+				getCe().executeInsertQuery(vi);
+
+				keyIt = objMap.keySet().iterator();
+				while (keyIt.hasNext()) {
+					String key = keyIt.next();
+					PrimitiveInstance pi = (PrimitiveInstance) vi.getSubGraph()
+							.getNodes().get(key);
+					Object o = objMap.get(key);
+					vbog.primitiveToObject(pi, o, true);
+				}
+				
+			}
+			
+			//
+			// 5. update the KefedModel as a view
+			//
+			vbog = getVbogs().get("KefedModel");
+			vi = vbog.objectGraphToView(kefed);
+			objMap = vbog.getObjMap();
+
+			getCe().executeUpdateQuery(vi);
+
+			keyIt = objMap.keySet().iterator();
+			while (keyIt.hasNext()) {
+				String key = keyIt.next();
+				PrimitiveInstance pi = (PrimitiveInstance) vi.getSubGraph()
+						.getNodes().get(key);
+				Object o = objMap.get(key);
+				vbog.primitiveToObject(pi, o, true);
+			}
+
+			getCe().commitTransaction();
+
+		} catch (Exception e) {
+
+			getCe().rollbackTransaction();
+			e.printStackTrace();
+			throw e;
+
+		} finally {
+
+			getCe().closeDbConnection();
+
+		}
+		
+	}
+
+	private Map<Long,KefedModelElement> createElementBmkegIdSet(List<KefedModelElement> elList) throws Exception {
+		Map<Long,KefedModelElement> bmkegIds = new HashMap<Long,KefedModelElement>();
+		Iterator<KefedModelElement> elIt = elList.iterator();
+		while( elIt.hasNext() ) {
+			KefedModelElement el = elIt.next();
+			bmkegIds.put(el.getBmkegId(),el);
+		}
+		return bmkegIds;
+	}
+
+	private Map<Long,KefedModelEdge> createEdgeBmkegIdSet(List<KefedModelEdge> edList) throws Exception {
+		Map<Long,KefedModelEdge> bmkegIds = new HashMap<Long,KefedModelEdge>();
+		Iterator<KefedModelEdge> edIt = edList.iterator();
+		while( edIt.hasNext() ) {
+			KefedModelEdge ed = edIt.next();
+			bmkegIds.put(ed.getBmkegId(),ed);
+		}
+		return bmkegIds;
+		
+	}
+
+	
+	@Override
+	public boolean deleteModel(String uuid) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	
+	public <T> List<T> listObjectGraphsFromDb(T t) throws Exception {
+
+		String viewName = t.getClass().getName();
+		ViewBasedObjectGraph vbog = new ViewBasedObjectGraph(getTop(), getCl(),
+				viewName);
+		ViewDefinition vd = getTop().getViews().get(viewName);
+		ViewInstance qVi = new ViewInstance(vd);
+		List<T> l = new ArrayList<T>();
+		List<ViewInstance> viewList = getCe().executeFullQuery(qVi);
+		for (Iterator<ViewInstance> iterator = viewList.iterator(); iterator.hasNext();) {
+			ViewInstance viewInstance = (ViewInstance) iterator.next();
+			vbog.viewToObjectGraph(viewInstance);
+			T oa = (T) vbog.readPrimaryObject();
+		    l.add(oa);
+		}
+		return l;
+
+	}
+
+}

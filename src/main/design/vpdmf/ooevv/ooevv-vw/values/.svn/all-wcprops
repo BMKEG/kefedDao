@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/repository/!svn/ver/4173/code/kefed/trunk/library/src/main/design/vpdmf/ooevv/ooevv-vw/values
+END
+relativeValue-vw.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/repository/!svn/ver/4173/code/kefed/trunk/library/src/main/design/vpdmf/ooevv/ooevv-vw/values/relativeValue-vw.xml
+END
+integerValue-vw.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/repository/!svn/ver/4173/code/kefed/trunk/library/src/main/design/vpdmf/ooevv/ooevv-vw/values/integerValue-vw.xml
+END
+nominalValue-vw.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/repository/!svn/ver/4173/code/kefed/trunk/library/src/main/design/vpdmf/ooevv/ooevv-vw/values/nominalValue-vw.xml
+END
+decimalValue-vw.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/repository/!svn/ver/4173/code/kefed/trunk/library/src/main/design/vpdmf/ooevv/ooevv-vw/values/decimalValue-vw.xml
+END
+hierarchicalValue-vw.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/repository/!svn/ver/4173/code/kefed/trunk/library/src/main/design/vpdmf/ooevv/ooevv-vw/values/hierarchicalValue-vw.xml
+END
+numericValue-vw.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/repository/!svn/ver/4173/code/kefed/trunk/library/src/main/design/vpdmf/ooevv/ooevv-vw/values/numericValue-vw.xml
+END
+binaryValue-vw.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/repository/!svn/ver/4173/code/kefed/trunk/library/src/main/design/vpdmf/ooevv/ooevv-vw/values/binaryValue-vw.xml
+END
+measurementValue-vw.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/repository/!svn/ver/4173/code/kefed/trunk/library/src/main/design/vpdmf/ooevv/ooevv-vw/values/measurementValue-vw.xml
+END
+ordinalValue-vw.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/repository/!svn/ver/4173/code/kefed/trunk/library/src/main/design/vpdmf/ooevv/ooevv-vw/values/ordinalValue-vw.xml
+END

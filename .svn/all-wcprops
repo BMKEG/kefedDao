@@ -1,0 +1,27 @@
+K 26
+svn:wc:ra_dav:activity-url
+V 25
+/svn/repository/!svn/act/
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/repository/!svn/ver/4197/code/kefed/trunk/library
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/repository/!svn/ver/5040/code/kefed/trunk/library/.classpath
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/repository/!svn/ver/5040/code/kefed/trunk/library/.project
+END
+pom.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/repository/!svn/ver/5040/code/kefed/trunk/library/pom.xml
+END

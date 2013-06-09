@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="ExperimentalVariable" type="Data" parent="NumericScale">
+	<primitives>
+		<primitive name="ExperimentalVariable">
+			<classes>
+				<class name="ExperimentalVariable"/>
+			</classes>
+			<pvLinks>
+				<pvLink c1="ExperimentalVariable" role="term" pv2="Term" c2="Term"/>
+				<pvLink c1="ExperimentalVariable" role="measures" pv2="QualityDefinition" c2="Term"/>
+				<pvLink c1="ExperimentalVariable" role="scale" pv2="MeasurementScale" c2="MeasurementScale"/>
+				<pvLink c1="ExperimentalVariable" role="sets" pv2="ExperimentalVariableSet" c2="ExperimentalVariableSet"/>
+			</pvLinks>
+		</primitive>
+		<primitive name="ExperimentalVariableSet" nullable="true">
+			<classes>
+				<class name="ExperimentalVariableSet"/>
+			</classes>
+		</primitive>
+		<primitive name="Term">
+			<classes>
+				<class name="Term"/>
+			</classes>
+			<pvLinks>
+				<pvLink c1="Term" role="ontology" pv2="Ontology" c2="Ontology"/>
+			</pvLinks>
+		</primitive>
+		<primitive name="Ontology" nullable="true">
+			<classes>
+				<class name="Ontology"/>
+			</classes>
+			<conditions>
+				<condition c="Ontology" a="shortName" v="OoEVV"/>
+			</conditions>
+		</primitive>
+		<primitive name="QualityDefinition" nullable="true">
+			<classes>
+				<class name="Term"/>
+			</classes>
+		</primitive>
+		<primitive name="MeasurementScale" nullable="true">
+			<classes>
+				<class name="MeasurementScale"/>
+			</classes>
+			<pvLinks>
+				<pvLink c1="MeasurementScale" role="term" pv2="ScaleDefinition" c2="Term"/>
+			</pvLinks>
+		</primitive>
+		<primitive name="ScaleDefinition" nullable="true">
+			<classes>
+				<class name="Term"/>
+			</classes>
+		</primitive>
+	</primitives>
+	<index format="Variable: $1$:$2$ ($3$)" />
+	<machineIndex format="Variable_$1$_$2$_$3$"/>
+	<indexElements>
+		<indexElement pos="1" p="Ontology" c="Ontology" a="shortName" />
+		<indexElement pos="2" p="Term" c="Term" a="shortTermId" />
+		<indexElement pos="3" p="Term" c="Term" a="termValue" />
+	</indexElements>
+</view>

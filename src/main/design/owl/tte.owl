@@ -1,0 +1,679 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://bmkeg.isi.edu/owl/kefed/test.owl#"
+     xml:base="http://bmkeg.isi.edu/owl/kefed/test.owl"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ro="http://www.obofoundry.org/ro/ro.owl#"
+     xmlns:kefed="http://bmkeg.isi.edu/owl/kefed/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://bmkeg.isi.edu/owl/kefed/test.owl">
+        <owl:imports rdf:resource="http://bmkeg.isi.edu/owl/kefed/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000011 -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000011"/>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000023 -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000023"/>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000047 -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000047"/>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000048 -->
+
+    <owl:ObjectProperty rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000048"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000293 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000293"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000295 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000295"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000299 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000299"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000312 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000312"/>
+    
+
+
+    <!-- http://www.obofoundry.org/ro/ro.owl#has_part -->
+
+    <owl:ObjectProperty rdf:about="http://www.obofoundry.org/ro/ro.owl#has_part"/>
+    
+
+
+    <!-- http://www.obofoundry.org/ro/ro.owl#part_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.obofoundry.org/ro/ro.owl#part_of"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000000 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000000"/>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000002 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000002"/>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000004 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000004"/>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000005 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000005"/>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000007 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000007"/>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000010 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000010"/>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000012 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000012"/>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000013 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000013"/>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000122 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000122">
+        <rdfs:label xml:lang="en">KEfED Experimental Subject</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000004"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000124 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000124">
+        <rdfs:label xml:lang="en">KEfED species</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000126 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000126">
+        <rdfs:label xml:lang="en">KEfED Injection</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000007"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000128 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000128">
+        <rdfs:label xml:lang="en">KEfED Perfusion</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000007"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000130 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000130">
+        <rdfs:label xml:lang="en">KEfED Brain</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000004"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000132 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000132">
+        <rdfs:label xml:lang="en">KEfED Tissue Sectioning</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000007"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000134 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000134">
+        <rdfs:label xml:lang="en">KEfED Immunohistochemistry</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000007"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000136 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000136">
+        <rdfs:label xml:lang="en">KEfED Immunostained slides</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000004"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000138 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000138">
+        <rdfs:label xml:lang="en">KEfED Neuroanatomical Mapping and analysis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000005"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000140 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000140">
+        <rdfs:label xml:lang="en">KEfED labeling-location</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000142 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000142">
+        <rdfs:label xml:lang="en">KEfED injection parameters</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000144 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000144">
+        <rdfs:label xml:lang="en">KEfED location</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000146 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000146">
+        <rdfs:label xml:lang="en">KEfED chemical</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000148 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000148">
+        <rdfs:label xml:lang="en">KEfED labeling_InformationArtifact</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000002"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000150 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000150">
+        <rdfs:label xml:lang="en">KEfED labeling</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000152 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000152">
+        <rdfs:label xml:lang="en">KEfED type</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000154 -->
+
+    <owl:Class rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000154">
+        <rdfs:label xml:lang="en">KEfED density</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000010"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- KEfED_000143 -->
+
+    <owl:NamedIndividual rdf:about="KEfED_000143">
+        <rdfs:label xml:lang="en">KEfED injection parameters - tte</rdfs:label>
+        <ro:has_part rdf:resource="KEfED_000145"/>
+        <ro:has_part rdf:resource="KEfED_000147"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- KEfED_000145 -->
+
+    <owl:NamedIndividual rdf:about="KEfED_000145">
+        <rdfs:label xml:lang="en">KEfED location - tte</rdfs:label>
+        <ro:part_of rdf:resource="KEfED_000143"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- KEfED_000147 -->
+
+    <owl:NamedIndividual rdf:about="KEfED_000147">
+        <rdfs:label xml:lang="en">KEfED chemical - tte</rdfs:label>
+        <ro:part_of rdf:resource="KEfED_000143"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- KEfED_000151 -->
+
+    <owl:NamedIndividual rdf:about="KEfED_000151">
+        <rdfs:label xml:lang="en">KEfED labeling - tte</rdfs:label>
+        <ro:has_part rdf:resource="KEfED_000153"/>
+        <ro:has_part rdf:resource="KEfED_000155"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- KEfED_000153 -->
+
+    <owl:NamedIndividual rdf:about="KEfED_000153">
+        <rdfs:label xml:lang="en">KEfED type - tte</rdfs:label>
+        <ro:part_of rdf:resource="KEfED_000151"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- KEfED_000155 -->
+
+    <owl:NamedIndividual rdf:about="KEfED_000155">
+        <rdfs:label xml:lang="en">KEfED density - tte</rdfs:label>
+        <ro:part_of rdf:resource="KEfED_000151"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000121 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000121">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000000"/>
+        <rdfs:label xml:lang="en">tte</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000123 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000123">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000122"/>
+        <rdfs:label xml:lang="en">KEfED Experimental Subject - tte</rdfs:label>
+        <kefed:KEfED_000023 rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000125"/>
+        <obo:OBI_0000295 rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000127"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000125 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000125">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000013"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000124"/>
+        <rdfs:label xml:lang="en">KEfED species - tte</rdfs:label>
+        <kefed:KEfED_000011 rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000123"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000127 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000127">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000126"/>
+        <rdfs:label xml:lang="en">KEfED Injection - tte</rdfs:label>
+        <obo:OBI_0000293 rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000123"/>
+        <kefed:KEfED_000047 rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000129"/>
+        <kefed:KEfED_000023 rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000143"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000129 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000129">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000128"/>
+        <rdfs:label xml:lang="en">KEfED Perfusion - tte</rdfs:label>
+        <kefed:KEfED_000048 rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000127"/>
+        <obo:OBI_0000299 rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000131"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000131 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000131">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000130"/>
+        <rdfs:label xml:lang="en">KEfED Brain - tte</rdfs:label>
+        <obo:OBI_0000312 rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000129"/>
+        <obo:OBI_0000295 rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000133"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000133 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000133">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000132"/>
+        <rdfs:label xml:lang="en">KEfED Tissue Sectioning - tte</rdfs:label>
+        <obo:OBI_0000293 rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000131"/>
+        <kefed:KEfED_000047 rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000135"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000135 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000135">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000134"/>
+        <rdfs:label xml:lang="en">KEfED Immunohistochemistry - tte</rdfs:label>
+        <kefed:KEfED_000048 rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000133"/>
+        <obo:OBI_0000299 rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000137"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000137 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000137">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000136"/>
+        <rdfs:label xml:lang="en">KEfED Immunostained slides - tte</rdfs:label>
+        <obo:OBI_0000312 rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000135"/>
+        <obo:OBI_0000295 rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000139"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000139 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000139">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000138"/>
+        <rdfs:label xml:lang="en">KEfED Neuroanatomical Mapping and analysis - tte</rdfs:label>
+        <obo:OBI_0000293 rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000137"/>
+        <kefed:KEfED_000023 rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000141"/>
+        <obo:OBI_0000299 rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000151"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000141 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000141">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000013"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000140"/>
+        <rdfs:label xml:lang="en">KEfED labeling-location - tte</rdfs:label>
+        <kefed:KEfED_000011 rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000139"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000143 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000143">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000013"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000142"/>
+        <rdfs:label xml:lang="en">KEfED injection parameters - tte</rdfs:label>
+        <kefed:KEfED_000011 rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000127"/>
+        <ro:has_part rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000145"/>
+        <ro:has_part rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000147"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000145 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000145">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000013"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000144"/>
+        <rdfs:label xml:lang="en">KEfED location - tte</rdfs:label>
+        <ro:part_of rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000143"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000147 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000147">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000013"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000146"/>
+        <rdfs:label xml:lang="en">KEfED chemical - tte</rdfs:label>
+        <ro:part_of rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000143"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000149 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000149">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000148"/>
+        <rdfs:label xml:lang="en">KEfED labeling_InformationArtifact - tte</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000151 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000151">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000012"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000150"/>
+        <rdfs:label xml:lang="en">KEfED labeling - tte</rdfs:label>
+        <obo:OBI_0000312 rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000139"/>
+        <ro:has_part rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000153"/>
+        <ro:has_part rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000155"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000153 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000153">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000012"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000152"/>
+        <rdfs:label xml:lang="en">KEfED type - tte</rdfs:label>
+        <ro:part_of rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000151"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://bmkeg.isi.edu/owl/kefed/KEfED_000155 -->
+
+    <owl:NamedIndividual rdf:about="http://bmkeg.isi.edu/owl/kefed/KEfED_000155">
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000012"/>
+        <rdf:type rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000154"/>
+        <rdfs:label xml:lang="en">KEfED density - tte</rdfs:label>
+        <ro:part_of rdf:resource="http://bmkeg.isi.edu/owl/kefed/KEfED_000151"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="KEfED_000144">
+        <rdfs:label xml:lang="en">KEfED location</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000146">
+        <rdfs:label xml:lang="en">KEfED chemical</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000140">
+        <rdfs:label xml:lang="en">KEfED labeling-location</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000141">
+        <rdfs:label xml:lang="en">KEfED labeling-location - tte</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000142">
+        <rdfs:label xml:lang="en">KEfED injection parameters</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000148">
+        <rdfs:label xml:lang="en">KEfED labeling_InformationArtifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000149">
+        <rdfs:label xml:lang="en">KEfED labeling_InformationArtifact - tte</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000128">
+        <rdfs:label xml:lang="en">KEfED Perfusion</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000127">
+        <rdfs:label xml:lang="en">KEfED Injection - tte</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000126">
+        <rdfs:label xml:lang="en">KEfED Injection</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000125">
+        <rdfs:label xml:lang="en">KEfED species - tte</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000129">
+        <rdfs:label xml:lang="en">KEfED Perfusion - tte</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000124">
+        <rdfs:label xml:lang="en">KEfED species</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000123">
+        <rdfs:label xml:lang="en">KEfED Experimental Subject - tte</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000122">
+        <rdfs:label xml:lang="en">KEfED Experimental Subject</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000121">
+        <rdfs:label xml:lang="en">tte</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000154">
+        <rdfs:label xml:lang="en">KEfED density</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000152">
+        <rdfs:label xml:lang="en">KEfED type</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000150">
+        <rdfs:label xml:lang="en">KEfED labeling</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000137">
+        <rdfs:label xml:lang="en">KEfED Immunostained slides - tte</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000136">
+        <rdfs:label xml:lang="en">KEfED Immunostained slides</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000139">
+        <rdfs:label xml:lang="en">KEfED Neuroanatomical Mapping and analysis - tte</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000138">
+        <rdfs:label xml:lang="en">KEfED Neuroanatomical Mapping and analysis</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000131">
+        <rdfs:label xml:lang="en">KEfED Brain - tte</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000130">
+        <rdfs:label xml:lang="en">KEfED Brain</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000133">
+        <rdfs:label xml:lang="en">KEfED Tissue Sectioning - tte</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000132">
+        <rdfs:label xml:lang="en">KEfED Tissue Sectioning</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000135">
+        <rdfs:label xml:lang="en">KEfED Immunohistochemistry - tte</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="KEfED_000134">
+        <rdfs:label xml:lang="en">KEfED Immunohistochemistry</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.1.0.1592) http://owlapi.sourceforge.net -->
+
