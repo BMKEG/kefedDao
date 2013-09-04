@@ -230,7 +230,7 @@ public class ExtendedKefedDaoImpl implements ExtendedKefedDao {
 			Iterator<Long> it = edToRemove.iterator();
 			while( it.hasNext() ) {
 				long i = it.next();
-				coreDao.getCe().deleteView("KefedModelEdge", i);
+				coreDao.getCe().executeDeleteQuery("KefedModelEdge", i);
 				logger.debug("removing edge: " + i);
 			}
 
@@ -241,7 +241,7 @@ public class ExtendedKefedDaoImpl implements ExtendedKefedDao {
 			while( it.hasNext() ) {
 				long i = it.next();
 				KefedModelElement el = elExist.get(i);
-				coreDao.getCe().deleteView(el.getElementType(), i);
+				coreDao.getCe().executeDeleteQuery(el.getElementType(), i);
 				logger.debug("removing node: " + i);				
 			}
 			

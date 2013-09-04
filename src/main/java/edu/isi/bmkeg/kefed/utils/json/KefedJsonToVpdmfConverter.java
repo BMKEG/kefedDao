@@ -212,7 +212,6 @@ public class KefedJsonToVpdmfConverter extends ExcelEngine {
 	public void generateOoevvReport(File input, File output) throws Exception {
 
 		this.buildOoevvReportFromJsonFile(input);
-		
 		this.generateOoevvReport(output);
 		
 	}
@@ -278,26 +277,28 @@ public class KefedJsonToVpdmfConverter extends ExcelEngine {
 					
 					paramSet.add(s);
 					
-					Iterator<String> vIt = n.getValueType().getAllowedValues().iterator();
-					while(vIt.hasNext()) {
-						String v = vIt.next();
-						paramValueSet.add(s + "=" + v);
-					}
-									
-					if( n.getValueType() != null && n.getValueType().getMultipleSlotFields().size() > 0  ) {
-						Iterator<KefedFieldValueTemplate> fIt = n.getValueType().getMultipleSlotFields().iterator();
-						while( fIt.hasNext() ) {
-							KefedFieldValueTemplate f = fIt.next();
-							paramSet.add(s + "." + clean(f.getNameValue()));							
-							
-							Iterator<String> v2It = f.getValueType().getAllowedValues().iterator();
-							while(v2It.hasNext()) {
-								String v2 = v2It.next();
-								paramValueSet.add(s + "." + clean(f.getNameValue()) + "=" + v2);
-							}
-
+					if( n.getValueType() != null ) {
+						Iterator<String> vIt = n.getValueType().getAllowedValues().iterator();
+						while(vIt.hasNext()) {
+							String v = vIt.next();
+							paramValueSet.add(s + "=" + v);
 						}
-
+										
+						if( n.getValueType() != null && n.getValueType().getMultipleSlotFields().size() > 0  ) {
+							Iterator<KefedFieldValueTemplate> fIt = n.getValueType().getMultipleSlotFields().iterator();
+							while( fIt.hasNext() ) {
+								KefedFieldValueTemplate f = fIt.next();
+								paramSet.add(s + "." + clean(f.getNameValue()));							
+								
+								Iterator<String> v2It = f.getValueType().getAllowedValues().iterator();
+								while(v2It.hasNext()) {
+									String v2 = v2It.next();
+									paramValueSet.add(s + "." + clean(f.getNameValue()) + "=" + v2);
+								}
+	
+							}
+	
+						}
 					}
 
 				} else if( type.equals("Dependent Variable Data") || 

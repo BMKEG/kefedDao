@@ -20,7 +20,7 @@ public class BuildKefedDatabase {
 			System.exit(-1);
 		}
 		
-		String buildFilePath = ClassLoader.getSystemResource("edu/isi/bmkeg/cosi/cosi_VPDMf.zip").getFile();
+		String buildFilePath = ClassLoader.getSystemResource("edu/isi/bmkeg/cosi/cosi-mysql.zip").getFile();
 		File buildFile = new File(buildFilePath);
 		
 		String dbName = args[0];

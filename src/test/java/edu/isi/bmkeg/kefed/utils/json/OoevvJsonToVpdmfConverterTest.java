@@ -35,17 +35,19 @@ public class OoevvJsonToVpdmfConverterTest {
 	
 	String kefedUrl;
 
-	File smallJsonFile, largeJsonFile, report1, report2;
+	File oldJsonFile, smallJsonFile, largeJsonFile, report1, report2, report3;
 	
 	@Before
 	public void setUp() throws Exception {
         
 		ctx = AppContext.getApplicationContext();
 		
+		oldJsonFile = ctx.getResource("classpath:edu/isi/bmkeg/kefed/utils/json/oldKefedModels.txt").getFile();
 		smallJsonFile = ctx.getResource("classpath:edu/isi/bmkeg/kefed/utils/json/kefedSimple.json").getFile();
 		largeJsonFile = ctx.getResource("classpath:edu/isi/bmkeg/kefed/utils/json/kefed.json").getFile();
 		report1 = new File(smallJsonFile.getParent() + "/report1.xls");
 		report2 = new File(smallJsonFile.getParent() + "/report2.xls");
+		report3 = new File(smallJsonFile.getParent() + "/report3.xls");
 
 		kefedUrl = "http://hugin.isi.edu:8180/persevere/KefedModel";
 		jsonToVpdmf = new KefedJsonToVpdmfConverter();
@@ -57,15 +59,20 @@ public class OoevvJsonToVpdmfConverterTest {
 		
 	}
 
+	@Test
+	public void testLatestConvertJsonFileToOoevv() throws Exception {
+		jsonToVpdmf.generateOoevvReport(oldJsonFile, report3);
+	}
+	
 /*	@Test
 	public void testConvertJsonFileToOoevv() throws Exception {
 		jsonToVpdmf.generateOoevvReport(largeJsonFile, report1);
-	}*/
+	}
 
 	@Test
 	public void testConvertJsonUrlToOoevv() throws Exception {
 		jsonToVpdmf.generateOoevvReport(kefedUrl, report2);
-	}
+	}*/
 
 /*	@Test
 	public void testCommand() throws Exception {
