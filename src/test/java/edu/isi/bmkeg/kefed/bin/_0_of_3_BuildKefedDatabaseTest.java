@@ -33,7 +33,7 @@ public class _0_of_3_BuildKefedDatabaseTest {
 
 		login = prop.getDbUser();
 		password =  prop.getDbPassword();
-		dbUrl = prop.getDbUrl();
+		dbUrl = "kefed_test";//prop.getDbUrl();
 		dbName = dbUrl.substring(dbUrl.lastIndexOf("/")+1);
 		
 		archive1 = ctx.getResource(
