@@ -14,7 +14,7 @@
 	    <relativePath>../bmkeg-parent</relativePath>
  	</parent>
  	
-	<name>Knowledge Engineering from Experimental Design</name>
+	<name>Knowledge Engineering from Experimental Design Data Access</name>
 
 	<build>
 		<plugins>
