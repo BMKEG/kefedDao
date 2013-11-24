@@ -88,7 +88,7 @@ public class _2_of_3_RetrieveKefedModelTest {
 		qo.setExptId("ad");
 		List<LightViewInstance> l = kefedDao.listKefedModel(qo);
 
-		KefedModel kefed = extKefedDao.retrieveModel(l.get(0).getVpdmfId());
+		//KefedModel kefed = extKefedDao.retrieveModel(l.get(0).getVpdmfId());
 		
 		int pauseHere = 0;
 		//assert(kefed.getElements().size() == )
