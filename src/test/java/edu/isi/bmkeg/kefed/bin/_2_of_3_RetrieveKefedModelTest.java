@@ -15,9 +15,7 @@ import edu.isi.bmkeg.kefed.dao.ExtendedKefedDao;
 import edu.isi.bmkeg.kefed.dao.KefedDao;
 import edu.isi.bmkeg.kefed.dao.impl.ExtendedKefedDaoImpl;
 import edu.isi.bmkeg.kefed.dao.impl.KefedDaoImpl;
-import edu.isi.bmkeg.kefed.model.design.KefedModel;
 import edu.isi.bmkeg.kefed.model.qo.design.KefedModel_qo;
-import edu.isi.bmkeg.ooevv.bin.OoevvSvnToDatabase;
 import edu.isi.bmkeg.utils.springContext.AppContext;
 import edu.isi.bmkeg.utils.springContext.BmkegProperties;
 import edu.isi.bmkeg.vpdmf.controller.VPDMfKnowledgeBaseBuilder;
@@ -28,13 +26,11 @@ import edu.isi.bmkeg.vpdmf.model.instances.LightViewInstance;
 public class _2_of_3_RetrieveKefedModelTest {
 
 	ApplicationContext ctx;
-
-	OoevvSvnToDatabase svnToDb;
 	
 	File excel;
 	String output;
 
-	String dbLogin, dbPassword, dbUrl;
+	String dbLogin, dbPassword, dbUrl, wd;
 	String svnLogin, svnPassword, svnUrl;
 	File svnDir;
 	
@@ -52,6 +48,7 @@ public class _2_of_3_RetrieveKefedModelTest {
 		dbLogin = prop.getDbUser();
 		dbPassword = prop.getDbPassword();
 		dbUrl = "kefed_test"; //prop.getDbUrl();
+		wd = prop.getWorkingDirectory();
 		
 		int l = dbUrl.lastIndexOf("/");
 		if (l != -1)
@@ -67,7 +64,7 @@ public class _2_of_3_RetrieveKefedModelTest {
 				dbLogin, dbPassword, dbUrl);
 		
 		extKefedDao = new ExtendedKefedDaoImpl();
-		extKefedDao.init(dbLogin, dbPassword, dbUrl);
+		extKefedDao.init(dbLogin, dbPassword, dbUrl, wd);
 		
 		kefedDao = new KefedDaoImpl();
 		kefedDao.setCoreDao(this.extKefedDao.getCoreDao());

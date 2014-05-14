@@ -12,7 +12,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import edu.isi.bmkeg.ooevv.bin.OoevvDirToDatabase;
-import edu.isi.bmkeg.ooevv.bin.OoevvSvnToDatabase;
 import edu.isi.bmkeg.utils.springContext.AppContext;
 import edu.isi.bmkeg.utils.springContext.BmkegProperties;
 import edu.isi.bmkeg.vpdmf.controller.VPDMfKnowledgeBaseBuilder;
@@ -23,8 +22,6 @@ public class _1_of_3_OoevvDirToDatabaseTest {
 
 	ApplicationContext ctx;
 
-	OoevvSvnToDatabase svnToDb;
-	
 	File excel;
 	String output;
 
@@ -70,7 +67,7 @@ public class _1_of_3_OoevvDirToDatabaseTest {
 	}
 	
 	@Test
-	public final void testRunExecWithFullPaths() throws Exception {
+	public final void testBuildDemoDatabase() throws Exception {
 		
 		String[] args = new String[] { 
 				svnDir.getPath(), dbUrl, dbLogin, dbPassword

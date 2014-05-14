@@ -15,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 import org.apache.poi.hssf.record.SSTRecord;
@@ -25,30 +24,21 @@ import org.apache.poi.hssf.usermodel.HSSFFont;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.hibernate.property.MapAccessor.MapGetter;
 import org.jgrapht.DirectedGraph;
 import org.jgrapht.alg.DijkstraShortestPath;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import org.jgrapht.graph.DefaultEdge;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
-import edu.isi.bmkeg.ooevv.model.ExperimentalVariable;
 import edu.isi.bmkeg.ooevv.model.OoevvElementSet;
-import edu.isi.bmkeg.ooevv.model.OoevvEntity;
-import edu.isi.bmkeg.ooevv.model.OoevvProcess;
 import edu.isi.bmkeg.ooevv.utils.OoevvExcelEngine;
 import edu.isi.bmkeg.terminology.model.Ontology;
-import edu.isi.bmkeg.terminology.model.Term;
 import edu.isi.bmkeg.terminology.utils.bioportal.BioportalSearch;
 import edu.isi.bmkeg.utils.excel.ExcelEngine;
-import edu.isi.bmkeg.utils.springContext.AppContext;
 
 public class KefedJsonToVpdmfConverter extends ExcelEngine {
 	

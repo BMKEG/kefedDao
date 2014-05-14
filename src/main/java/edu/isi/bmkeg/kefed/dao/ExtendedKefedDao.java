@@ -12,7 +12,7 @@ public interface ExtendedKefedDao {
 	
 	public CoreDao getCoreDao();
 	
-	public void init(String login, String password, String uri) throws Exception;
+	public void init(String login, String password, String uri, String wd) throws Exception;
 	
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -17,6 +17,7 @@ import edu.isi.bmkeg.kefed.dao.ExtendedKefedDao;
 import edu.isi.bmkeg.kefed.model.design.KefedModel;
 import edu.isi.bmkeg.kefed.model.design.KefedModelEdge;
 import edu.isi.bmkeg.kefed.model.design.KefedModelElement;
+import edu.isi.bmkeg.kefed.model.qo.design.KefedModel_qo;
 import edu.isi.bmkeg.vpdmf.dao.CoreDao;
 import edu.isi.bmkeg.vpdmf.dao.CoreDaoImpl;
 import edu.isi.bmkeg.vpdmf.model.ViewTable;
@@ -38,13 +39,13 @@ public class ExtendedKefedDaoImpl implements ExtendedKefedDao {
 		
 	public ExtendedKefedDaoImpl() throws Exception {}
 
-	public void init(String login, String password, String uri) throws Exception {
+	public void init(String login, String password, String uri, String wd) throws Exception {
 		
 		if( coreDao == null ) {
 			this.coreDao = new CoreDaoImpl();
 		}
 		
-		this.coreDao.init(login, password, uri);
+		this.coreDao.init(login, password, uri, wd);
 		
 	}
 	
@@ -60,7 +61,7 @@ public class ExtendedKefedDaoImpl implements ExtendedKefedDao {
 		
 	public List<LightViewInstance> listAllKefedModels() throws Exception {
 
-		return coreDao.listAllViews("KefedModel");
+		return coreDao.list(new KefedModel_qo(), "KefedModel");
 
 	}
 
