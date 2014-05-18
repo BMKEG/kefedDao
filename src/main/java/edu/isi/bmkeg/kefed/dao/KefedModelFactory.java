@@ -12,7 +12,6 @@ import org.jgrapht.UndirectedGraph;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
 
-import edu.isi.bmkeg.digitalLibrary.model.citations.LiteratureCitation;
 import edu.isi.bmkeg.kefed.model.design.ConstantInstance;
 import edu.isi.bmkeg.kefed.model.design.EntityInstance;
 import edu.isi.bmkeg.kefed.model.design.KefedModel;
@@ -30,7 +29,7 @@ import edu.isi.bmkeg.ooevv.model.OoevvProcess;
 public class KefedModelFactory {
 
 	public static KefedModel newKefedModelInstance(String id,
-			OoevvElementSet oes, LiteratureCitation cite) {
+			OoevvElementSet oes) {
 
 		KefedModel m = new KefedModel();
 		m.setExptId(id);
@@ -48,7 +47,6 @@ public class KefedModelFactory {
 		m.setDate(dateFormat.format(cal.getTime()));
 
 		m.setOoevv(oes);
-		m.setReference(cite);
 
 		return m;
 

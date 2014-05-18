@@ -144,19 +144,19 @@
 	
 		<dependency>
 			<groupId>edu.isi.bmkeg</groupId>
-			<artifactId>cosi</artifactId>
+			<artifactId>vpdmf-cosi</artifactId>
 			<type>zip</type>
 			<classifier>mysql</classifier>
 		</dependency>
 
 		<dependency>
 			<groupId>edu.isi.bmkeg</groupId>
-			<artifactId>cosi-jpa</artifactId>
+			<artifactId>vpdmf-cosi-jpa</artifactId>
 		</dependency>
 
 		<dependency>
 			<groupId>edu.isi.bmkeg</groupId>
-			<artifactId>cosi-services</artifactId>
+			<artifactId>vpdmf-cosi-services</artifactId>
 		</dependency>
 
 		<dependency>
@@ -169,15 +169,15 @@
 			<artifactId>ooevvDao</artifactId>
 			<exclusions>
 				<exclusion>
-					<artifactId>ooevv</artifactId>
+					<artifactId>vpdmf-ooevv</artifactId>
 					<groupId>edu.isi.bmkeg</groupId>
 				</exclusion>
 				<exclusion>
-					<artifactId>ooevv-jpa</artifactId>
+					<artifactId>vpdmf-ooevv-jpa</artifactId>
 					<groupId>edu.isi.bmkeg</groupId>
 				</exclusion>
 				<exclusion>
-					<artifactId>ooevv-services</artifactId>
+					<artifactId>vpdmf-ooevv-services</artifactId>
 					<groupId>edu.isi.bmkeg</groupId>
 				</exclusion>
 			</exclusions>
