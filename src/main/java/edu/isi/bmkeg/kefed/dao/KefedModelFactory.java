@@ -46,7 +46,7 @@ public class KefedModelFactory {
 		Calendar cal = Calendar.getInstance();
 		m.setDate(dateFormat.format(cal.getTime()));
 
-		m.setOoevv(oes);
+		//m.setOoevv(oes);
 
 		return m;
 

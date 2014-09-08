@@ -22,7 +22,7 @@ public interface ExtendedKefedDao {
 
 	public KefedModel retrieveModel(Long uid) throws Exception;
 
-	public void saveModel(KefedModel kefed) throws Exception;
+	public void saveModel(KefedModel kefed, long vpdmfId) throws Exception;
 
 	public boolean deleteModel(Long uuid) throws Exception;
 	

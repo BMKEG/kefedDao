@@ -17,10 +17,12 @@ import edu.isi.bmkeg.kefed.dao.ExtendedKefedDao;
 import edu.isi.bmkeg.kefed.model.design.KefedModel;
 import edu.isi.bmkeg.kefed.model.design.KefedModelEdge;
 import edu.isi.bmkeg.kefed.model.design.KefedModelElement;
+import edu.isi.bmkeg.kefed.model.qo.design.KefedModelEdge_qo;
+import edu.isi.bmkeg.kefed.model.qo.design.KefedModelElement_qo;
 import edu.isi.bmkeg.kefed.model.qo.design.KefedModel_qo;
+import edu.isi.bmkeg.ooevv.model.OoevvElement;
 import edu.isi.bmkeg.vpdmf.dao.CoreDao;
 import edu.isi.bmkeg.vpdmf.dao.CoreDaoImpl;
-import edu.isi.bmkeg.vpdmf.model.ViewTable;
 import edu.isi.bmkeg.vpdmf.model.definitions.VPDMf;
 import edu.isi.bmkeg.vpdmf.model.definitions.ViewDefinition;
 import edu.isi.bmkeg.vpdmf.model.instances.LightViewInstance;
@@ -82,22 +84,8 @@ public class ExtendedKefedDaoImpl implements ExtendedKefedDao {
 			while( elIt.hasNext() ) {
 				KefedModelElement el = elIt.next();
 				
-				ViewBasedObjectGraph vbog = new ViewBasedObjectGraph(top, cl, el.getElementType());
-
-				ViewInstance vi = vbog.objectGraphToView(el);
-				Map<String, Object> objMap = vbog.getObjMap();
-
-				coreDao.getCe().executeInsertQuery(vi);
-
-				Iterator<String> keyIt = objMap.keySet().iterator();
-				while (keyIt.hasNext()) {
-					String key = keyIt.next();
-					PrimitiveInstance pi = (PrimitiveInstance) vi.getSubGraph()
-							.getNodes().get(key);
-					Object o = objMap.get(key);
-					vbog.primitiveToObject(pi, o, true);
-				}
-				
+				coreDao.insertInTrans(el, el.getElementType());
+								
 			}
 			
 			//
@@ -107,22 +95,8 @@ public class ExtendedKefedDaoImpl implements ExtendedKefedDao {
 			while( edIt.hasNext() ) {
 				KefedModelEdge ed = edIt.next();
 				
-				ViewBasedObjectGraph vbog = new ViewBasedObjectGraph(top, cl, "KefedModelEdge");
-
-				ViewInstance vi = vi = vbog.objectGraphToView(ed);
-				Map<String, Object> objMap = vbog.getObjMap();
-
-				coreDao.getCe().executeInsertQuery(vi);
-
-				Iterator<String> keyIt = objMap.keySet().iterator();
-				while (keyIt.hasNext()) {
-					String key = keyIt.next();
-					PrimitiveInstance pi = (PrimitiveInstance) vi.getSubGraph()
-							.getNodes().get(key);
-					Object o = objMap.get(key);
-					vbog.primitiveToObject(pi, o, true);
-				}
-				
+				coreDao.insertInTrans(ed, "KefedModelEdge");
+								
 			}
 
 			//
@@ -161,7 +135,7 @@ public class ExtendedKefedDaoImpl implements ExtendedKefedDao {
 	
 	public KefedModel retrieveModel(Long uid) throws Exception {
 
-		KefedModel kefed = new KefedModel();
+		KefedModel m = new KefedModel();
 		
 		try {
 
@@ -179,47 +153,91 @@ public class ExtendedKefedDaoImpl implements ExtendedKefedDao {
 			// (this should contain all nodes and edges but no 
 			//  extra details of the nodes)
 			//
-			kefed = coreDao.findByIdInTrans(uid, kefed, "KefedModel");
+			m = coreDao.findByIdInTrans(uid, m, "KefedModel");
 						
 			//
 			// 2. fill out each model element of the KefedModel as needed
 			//
-			for( KefedModelElement el : kefed.getElements() ) {
+			KefedModelElement_qo elQ = new KefedModelElement_qo();
+			KefedModel_qo mQ = new KefedModel_qo();
+			elQ.setModel( mQ );
+			mQ.setUuid( m.getUuid() );
+			
+			Map<String, KefedModelElement> lookup = new HashMap<String, KefedModelElement>();
+			
+			List<LightViewInstance> nodeList = coreDao.list(elQ, "KefedModelElement"); 
+			for( LightViewInstance lvi : nodeList ) {
 
-				String type = el.getElementType();
+				Map<String,String> objMap = lvi.readIndexTupleMap(top);
+
+				KefedModelElement el = new KefedModelElement();
+				String type = lvi.getDefName();
+				el.setElementType(type);
 				
-				Class elClass = Class.forName("edu.isi.bmkeg.kefed.model.design." + type);
-				KefedModelElement el2 = (KefedModelElement) 
-						coreDao.findByIdInTrans(el.getVpdmfId(), 
-								(ViewTable) elClass.newInstance(),
-								type);
+				String uuid = objMap.get("[" + type + "]KefedModelElement|KefedModelElement.uuid");
+				el.setUuid(uuid);
+				lookup.put(uuid, el);
+
+				String name = null;
+				if( type.equals("EntityInstance") ) {
+					name = objMap.get("[EntityInstance]OoevvEntity|Term.termValue");
+				} else if( type.equals("ProcessInstance") ) {
+					name = objMap.get("[ProcessInstance]OoevvProcess|Term.termValue");
+				} else {
+					name = objMap.get("[" + type + "]ExperimentalVariable|Term.termValue");
+				}
+				OoevvElement defn = new OoevvElement();
+				defn.setTermValue(name);
+				el.setDefn(defn);
 				
-				elLookup.put(el2.getUuid(), el2);
-				elList.add(el2);
+				String xx = objMap.get("[" + type + "]KefedModelElement|KefedModelElement.x");
+				el.setX(new Float(xx));
+
+				String yy = objMap.get("[" + type + "]KefedModelElement|KefedModelElement.y");
+				el.setY(new Float(yy));
+
+				String ww = objMap.get("[" + type + "]KefedModelElement|KefedModelElement.w");
+				el.setW(new Float(ww));
+
+				String hh = objMap.get("[" + type + "]KefedModelElement|KefedModelElement.h");
+				el.setH(new Float(hh));
+
+				m.getElements().add(el);
+				el.setModel( m );
 			
 			}
+			
 
 			//
 			// 3. switch out old elements from edges, but keep the edges.
 			//
-			for( KefedModelEdge edge : kefed.getEdges() ) {
+			KefedModelEdge_qo edQ = new KefedModelEdge_qo();
+			mQ = new KefedModel_qo();
+			mQ.setUuid( m.getUuid() );
+			edQ.setModel( mQ );
+			
+			List<LightViewInstance> edgeList = coreDao.list(edQ, "KefedModelEdge"); 
+			for( LightViewInstance lvi : edgeList ) {
 
-				KefedModelElement t = edge.getTarget();
-				KefedModelElement s = edge.getSource();
+				Map<String,String> objMap = lvi.readIndexTupleMap(top);
+
+				KefedModelEdge ed = new KefedModelEdge();
 				
-				if( s == null || t == null)
-					continue;
+				String edgeUuid = objMap.get("[KefedModelEdge]KefedModelEdge|KefedModelEdge.uuid");
+				ed.setUuid(edgeUuid);
 				
-				KefedModelElement ss = elLookup.get(s.getUuid());
-				edge.setSource( ss );
+				String sourceUuid = objMap.get("[KefedModelEdge]KefedModelElementIn|KefedModelElement.uuid");
+				KefedModelElement source = lookup.get(sourceUuid);
+				ed.setSource(source);
 				
-				KefedModelElement tt = elLookup.get(t.getUuid());
-				edge.setTarget( tt );
+				String targetUuid = objMap.get("[KefedModelEdge]KefedModelElementOut|KefedModelElement.uuid");
+				KefedModelElement target = lookup.get(targetUuid);
+				ed.setTarget(target);
+
+				m.getEdges().add(ed);
+				ed.setModel( m );
 			
 			}
-			
-			// Switch out list of elements
-			kefed.setElements(elList);
 			
 		} catch (Exception e) {
 
@@ -232,19 +250,19 @@ public class ExtendedKefedDaoImpl implements ExtendedKefedDao {
 
 		}
 		
-		return kefed;
+		return m;
 
 	}
 	
 	
-	public void saveModel(KefedModel kefed) throws Exception {
+	public void saveModel(KefedModel kefed, long vpdmfId) throws Exception {
 		
 		try {
 
 			coreDao.getCe().connectToDB();
 			coreDao.getCe().turnOffAutoCommit();
 			
-			ViewInstance vi = coreDao.getCe().executeUIDQuery("KefedModel", kefed.getVpdmfId() );
+			ViewInstance vi = coreDao.getCe().executeUIDQuery("KefedModel", vpdmfId );
 			coreDao.getCe().storeViewInstanceForUpdate(vi);
 			
 			ViewBasedObjectGraph vbog = new ViewBasedObjectGraph(coreDao.getTop(), coreDao.getCl(), "KefedModel");
