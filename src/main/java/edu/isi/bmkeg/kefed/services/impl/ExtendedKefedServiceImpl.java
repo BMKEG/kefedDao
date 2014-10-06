@@ -71,7 +71,7 @@ public class ExtendedKefedServiceImpl implements ExtendedKefedService {
 	}
 	
 	@Override
-	public Document retrieveKefedModelTree() 
+	public Document retrieveKefedModelTree(long vpdmfId) 
 			throws Exception {
 		
 		CoreDao coreDao = this.extKefedDao.getCoreDao();
@@ -95,6 +95,7 @@ public class ExtendedKefedServiceImpl implements ExtendedKefedService {
 				"b.fragment_Id = frg.vpdmfId AND " +
 				"frg.ftd_id = ftd.vpdmfId AND " +
 				"lc.fullText_id = ftd.vpdmfId AND " +
+				"lc.vpdmfId = " + vpdmfId + " AND " +
 				"lc.vpdmfId = vt.vpdmfId AND " +
 				"lc.vpdmfId = ac.vpdmfId AND " +
 				"ac.journal_id = j.vpdmfId AND " +
@@ -145,7 +146,7 @@ public class ExtendedKefedServiceImpl implements ExtendedKefedService {
 			String k = rs.getString("k.exptId");
 			Long kId = rs.getLong("k.vpdmfId");
 			
-			Element jEl = doc.createElement("node");
+			/*Element jEl = doc.createElement("node");
 			jEl.setAttribute("label", j);
 			jEl.setAttribute("data", jId + "");
 			jEl.setAttribute("type", "journal");
@@ -174,7 +175,7 @@ public class ExtendedKefedServiceImpl implements ExtendedKefedService {
 			} else {
 				vLookup.put(j + "_" + y + "_" + v, vEl);
 				yEl.appendChild(vEl);
-			}
+			}*/
 
 			Element citEl = doc.createElement("node");
 			citEl.setAttribute("label", cit);
@@ -184,7 +185,7 @@ public class ExtendedKefedServiceImpl implements ExtendedKefedService {
 				citEl = pLookup.get(citId + "");
 			} else {
 				pLookup.put(citId + "", citEl);
-				vEl.appendChild(citEl);
+				root.appendChild(citEl);
 			}
 
 			Element frgEl = doc.createElement("node");

@@ -10,7 +10,7 @@ public interface ExtendedKefedService {
 
 	public KefedModel retrieveCompleteKefedModel(long vpdmfId) throws Exception;
 	
-	public Document retrieveKefedModelTree() throws Exception;
+	public Document retrieveKefedModelTree(long vpdmfId) throws Exception;
 
 	public KefedModel createNewKefedModelForFragment(long frgId) throws Exception;
 

@@ -51,7 +51,7 @@
 							<artifactItems>
 								<artifactItem>
 									<groupId>edu.isi.bmkeg</groupId>
-									<artifactId>cosi</artifactId>
+									<artifactId>vpdmf-bioscholar</artifactId>
 									<type>zip</type>
 									<classifier>mysql</classifier>
 									<outputDirectory>${project.build.directory}/vpdmf/edu/isi/bmkeg/cosi</outputDirectory>
