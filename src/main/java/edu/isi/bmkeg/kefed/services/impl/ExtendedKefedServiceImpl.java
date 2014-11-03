@@ -91,7 +91,7 @@ public class ExtendedKefedServiceImpl implements ExtendedKefedService {
 				"KefedModelCuration as kc, " +
 				"KefedModel as k " +
 				"where " +
-				"b.vpdmfOrder = 0 AND " +
+//				"b.vpdmfOrder = 0 AND " +
 				"b.fragment_Id = frg.vpdmfId AND " +
 				"frg.ftd_id = ftd.vpdmfId AND " +
 				"lc.fullText_id = ftd.vpdmfId AND " +
