@@ -1,5 +1,7 @@
 package edu.isi.bmkeg.kefed.services;
 
+import java.util.List;
+
 import org.w3c.dom.Document;
 
 import edu.isi.bmkeg.kefed.model.design.*;
@@ -24,4 +26,6 @@ public interface ExtendedKefedService {
 
 	public Boolean deleteCompleteKefedModel(Long id) throws Exception;
 	
+	public Boolean moveKefedEdgesAndElements(List<String> uids, int dx, int dy) throws Exception;
+
 }

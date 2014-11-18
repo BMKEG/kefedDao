@@ -28,7 +28,9 @@ import edu.isi.bmkeg.kefed.model.design.KefedModelElement;
 import edu.isi.bmkeg.kefed.model.qo.design.KefedModel_qo;
 import edu.isi.bmkeg.kefed.services.ExtendedKefedService;
 import edu.isi.bmkeg.vpdmf.dao.CoreDao;
+import edu.isi.bmkeg.vpdmf.model.instances.AttributeInstance;
 import edu.isi.bmkeg.vpdmf.model.instances.LightViewInstance;
+import edu.isi.bmkeg.vpdmf.model.instances.ViewInstance;
 
 @RemotingDestination
 @Transactional
@@ -276,13 +278,13 @@ public class ExtendedKefedServiceImpl implements ExtendedKefedService {
 		
 		coreDao.insertInTrans(ke, ke.getClass().getSimpleName());
 		
-		xml = xml.replaceAll("\"", "\\\\\"");
-		
-		String sql = "UPDATE KefedModel SET diagramXML = \"" + xml + "\" " +
+		if(xml.length() > 0 ) {
+			xml = xml.replaceAll("\"", "\\\\\"");
+			String sql = "UPDATE KefedModel SET diagramXML = \"" + xml + "\" " +
 				" WHERE uuid = \"" + ke.getModel().getUuid() + "\";";
+			coreDao.getCe().executeRawUpdateQuery(sql);
+		}
 		
-		coreDao.getCe().executeRawUpdateQuery(sql);
-				
 		coreDao.commitTransaction();
 		
 		coreDao.closeDbConnection();
@@ -300,13 +302,13 @@ public class ExtendedKefedServiceImpl implements ExtendedKefedService {
 		
 		coreDao.insertInTrans(ke, "KefedModelEdge");
 		
-		xml = xml.replaceAll("\"", "\\\\\"");
+		if(xml.length() > 0 ) {
+			xml = xml.replaceAll("\"", "\\\\\"");
+			String sql = "UPDATE KefedModel SET diagramXML = \"" + xml + "\" " +
+					" WHERE uuid = \"" + ke.getModel().getUuid() + "\";";
+			coreDao.getCe().executeRawUpdateQuery(sql);
+		}
 		
-		String sql = "UPDATE KefedModel SET diagramXML = \"" + xml + "\" " +
-				" WHERE uuid = \"" + ke.getModel().getUuid() + "\";";
-		
-		coreDao.getCe().executeRawUpdateQuery(sql);
-				
 		coreDao.commitTransaction();
 		
 		coreDao.closeDbConnection();
@@ -340,10 +342,12 @@ public class ExtendedKefedServiceImpl implements ExtendedKefedService {
 		
 		coreDao.deleteByIdInTrans(keId, keType);
 		
-		xml = xml.replaceAll("\"", "\\\\\"");
-		String sql2 = "UPDATE KefedModel SET diagramXML = \"" + xml + "\" " +
-				" WHERE uuid = \"" + kmUid+ "\";";
-		coreDao.getCe().executeRawUpdateQuery(sql2);
+		if(xml.length() > 0 ) {
+			xml = xml.replaceAll("\"", "\\\\\"");
+			String sql2 = "UPDATE KefedModel SET diagramXML = \"" + xml + "\" " +
+					" WHERE uuid = \"" + kmUid+ "\";";
+			coreDao.getCe().executeRawUpdateQuery(sql2);
+		}
 		
 		coreDao.commitTransaction();
 		
@@ -376,10 +380,12 @@ public class ExtendedKefedServiceImpl implements ExtendedKefedService {
 		
 		coreDao.deleteByIdInTrans(keId, "KefedModelEdge");
 		
-		xml = xml.replaceAll("\"", "\\\\\"");
-		String sql2 = "UPDATE KefedModel SET diagramXML = \"" + xml + "\" " +
-				" WHERE uuid = \"" + kmUid+ "\";";
-		coreDao.getCe().executeRawUpdateQuery(sql2);
+		if(xml.length() > 0 ) {
+			xml = xml.replaceAll("\"", "\\\\\"");
+			String sql2 = "UPDATE KefedModel SET diagramXML = \"" + xml + "\" " +
+					" WHERE uuid = \"" + kmUid+ "\";";
+			coreDao.getCe().executeRawUpdateQuery(sql2);
+		}
 		
 		coreDao.commitTransaction();
 		
@@ -440,6 +446,44 @@ public class ExtendedKefedServiceImpl implements ExtendedKefedService {
 		return true;
 	
 	}
+		
+	@Override
+	public Boolean moveKefedEdgesAndElements(List<String> uids, int dx, int dy) throws Exception {
+		
+		CoreDao coreDao = this.extKefedDao.getCoreDao();
+		coreDao.connectToDb();
+		
+		if( uids.size() == 0 ) 
+			return false;
+		
+		for(String uuid : uids) {
+			String sql = "select e.vpdmfId,e.elementType from KefedModelElement as e " +
+					"where e.uuid = '" + uuid + "'";
+			ResultSet rs = coreDao.getCe().executeRawSqlQuery(sql);
+			rs.next();
+			Long vpdmfId = rs.getLong("e.vpdmfId");
+			String type = rs.getString("e.elementType");
+			rs.close();
 
+			ViewInstance vi = coreDao.getCe().executeUIDQuery(type, vpdmfId);
+			coreDao.getCe().storeViewInstanceForUpdate(vi);
+			
+			AttributeInstance ai = vi.readAttributeInstance("]KefedModelElement|KefedModelElement.x", 0);
+			ai.writeValueString(dx + "");
+
+			ai = vi.readAttributeInstance("]KefedModelElement|KefedModelElement.y", 0);
+			ai.writeValueString(dy + "");
+			
+			coreDao.getCe().executeUpdateQuery(vi);
+
+		}
+		
+		coreDao.getCe().commitTransaction();
+		
+		coreDao.closeDbConnection();		
+		
+		return true;
 	
+	}
+		
 }
