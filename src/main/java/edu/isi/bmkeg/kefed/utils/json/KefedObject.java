@@ -5,6 +5,7 @@ import java.util.List;
 public class KefedObject {
 	
 	private String type;
+	private String notes;
 	private int pos;
 	private String spriteid;
 	private String valueDomain;
@@ -109,6 +110,12 @@ public class KefedObject {
 	}
 	public void setValueType(KefedFullValueTemplate valueType) {
 		this.valueType = valueType;
+	}
+	public String getNotes() {
+		return notes;
+	}
+	public void setNotes(String notes) {
+		this.notes = notes;
 	}
 
 }

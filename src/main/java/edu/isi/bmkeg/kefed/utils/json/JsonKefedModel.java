@@ -2,11 +2,20 @@ package edu.isi.bmkeg.kefed.utils.json;
 
 import java.io.StringReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.jgrapht.DirectedGraph;
+import org.jgrapht.alg.DijkstraShortestPath;
+import org.jgrapht.graph.DefaultDirectedGraph;
+import org.jgrapht.graph.DefaultEdge;
 import org.xml.sax.InputSource;
 
 public class JsonKefedModel {
@@ -21,7 +30,7 @@ public class JsonKefedModel {
 	private String _uid;
 	private String description;
 	private String dateTime;
-	
+		
 	private List<KefedObject> nodes = new ArrayList<KefedObject>();
 	private List<KefedLink> edges = new ArrayList<KefedLink>();
 	
@@ -55,10 +64,10 @@ public class JsonKefedModel {
 	public String getModelName() {
 		return modelName;
 	}
-	public void set_uid(String _uid) {
+	public void setUid(String _uid) {
 		this._uid = _uid;
 	}
-	public String get_uid() {
+	public String getUid() {
 		return _uid;
 	}
 	public void setDescription(String description) {
@@ -96,6 +105,92 @@ public class JsonKefedModel {
 	}
 	public List<KefedLink> getEdges() {
 		return edges;
+	}
+	
+	public List<KefedObject> getDependOnsForMeasurement(KefedObject ko) {
+		
+		String type = ko.getSpriteid();
+		if( !type.equals("Dependent Variable Data") && 
+				!type.equals("Measurement Specification")) {
+			return null;
+		}
+		
+		Map<KefedObject, Integer> localDep = new HashMap<KefedObject, Integer>();
+		
+	    DirectedGraph<KefedObject, DefaultEdge> g =
+	            new DefaultDirectedGraph<KefedObject, DefaultEdge>(DefaultEdge.class);
+
+	    HashMap<String, KefedObject> nLookup = new HashMap<String, KefedObject>();
+		Iterator<KefedObject> nIt = this.getNodes().iterator(); 
+	   	while(nIt.hasNext()) {
+	   		KefedObject n = nIt.next();
+	   		nLookup.put(n.getUid(), n);   			
+	   	}
+	   		
+	    for( KefedLink l : this.getEdges()) {
+	    	String sUid = l.getStart();
+	    	String tUid = l.getEnd();
+	    		
+	    	KefedObject s = nLookup.get(sUid);
+	    	KefedObject t = nLookup.get(tUid);
+	    		    
+	    	if( s == null ){
+	    		System.err.println(this.getModelName() + ": uid=" + sUid + " is missing ");    			
+	    		continue;
+	    	}
+	    		
+	    	if( t == null ){
+	    		System.err.println(this.getModelName() + ": uid=" + tUid + " is missing ");    			
+	    		continue;
+	    	}
+	    		
+	    	g.addVertex(s);
+	        g.addVertex(t);
+	        g.addEdge(s, t);
+	       	
+	    }
+	    	
+	    Set<KefedObject> pSet = new HashSet<KefedObject>();
+	    for( KefedObject obj : this.getNodes()) {
+	    	
+			String type2 = obj.getSpriteid();
+
+			if( type2.equals("Measurement Specification") || 
+				type2.equals("Parameter Specification") ||
+				type2.equals("Constant Specification")) {
+
+				pSet.add(obj);
+
+			} 
+		}
+	        
+	    KefedObject in = null;
+		KefedObject out = null;
+
+		int inLength = 10000;
+		int outLength = 10000;
+		int maxPath = -1;
+
+		for( KefedObject p : pSet ) {
+			List outPath = DijkstraShortestPath.findPathBetween(g, p, ko);
+			if( outPath != null ) {
+				localDep.put(p, outPath.size());
+				if( outPath.size() > maxPath )
+					maxPath = outPath.size();
+			}
+		}
+
+		List<KefedObject> deps = new ArrayList<KefedObject>();
+		for(int i=maxPath; i>0; i--) {
+			for( KefedObject p : localDep.keySet() ) {
+				if(localDep.get(p) == i) {
+					deps.add(p);
+				}
+			}
+		}
+
+		return deps;
+		
 	}
 	
 	public KefedModel2 convertToKefedModel() throws Exception {

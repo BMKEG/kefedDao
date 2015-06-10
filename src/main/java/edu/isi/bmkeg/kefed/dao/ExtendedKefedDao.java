@@ -16,14 +16,19 @@ public interface ExtendedKefedDao {
 	
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+	public void initializeOoevvDao() throws Exception;
+
 	public List<LightViewInstance> listAllKefedModels() throws Exception;
 
 	public void insertKefedModel(KefedModel kefed) throws Exception;
 
 	public KefedModel retrieveModel(Long uid) throws Exception;
 
+	public KefedModel retrieveModelFromUuid(String uuid) throws Exception;
+
 	public void saveModel(KefedModel kefed, long vpdmfId) throws Exception;
 
 	public boolean deleteModel(Long uuid) throws Exception;
+
 	
 }

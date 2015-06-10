@@ -48,6 +48,8 @@ public class ExtendedKefedServiceImpl implements ExtendedKefedService {
 	
 	public boolean saveCompleteKefedModel(KefedModel kefedModel) throws Exception {
 	
+		this.extKefedDao.initializeOoevvDao();
+		
 		CoreDao coreDao = this.extKefedDao.getCoreDao();
 		
 		KefedModel_qo kefedQo = new KefedModel_qo();
@@ -68,13 +70,26 @@ public class ExtendedKefedServiceImpl implements ExtendedKefedService {
 	@Override
 	public KefedModel retrieveCompleteKefedModel(long vpdmfId) throws Exception {
 
+		this.extKefedDao.initializeOoevvDao();
+		
 		return this.extKefedDao.retrieveModel(vpdmfId);
+		
+	}
+	
+	@Override
+	public KefedModel retrieveCompleteKefedModelFromUuid(String uuid) throws Exception {
+
+		this.extKefedDao.initializeOoevvDao();
+		
+		return this.extKefedDao.retrieveModelFromUuid(uuid);
 		
 	}
 	
 	@Override
 	public Document retrieveKefedModelTree(long vpdmfId) 
 			throws Exception {
+		
+		this.extKefedDao.initializeOoevvDao();
 		
 		CoreDao coreDao = this.extKefedDao.getCoreDao();
 		coreDao.connectToDb();
@@ -88,7 +103,7 @@ public class ExtendedKefedServiceImpl implements ExtendedKefedService {
 				"FTD as ftd, " +
 				"Journal as j, " + 
 				"ViewTable as vt, " +
-				"literaturecitation as lc, " +
+				"LiteratureCitation as lc, " +
 				"ArticleCitation as ac, " +
 				"KefedModelCuration as kc, " +
 				"KefedModel as k " +
@@ -224,6 +239,8 @@ public class ExtendedKefedServiceImpl implements ExtendedKefedService {
 	public KefedModel createNewKefedModelForFragment(long frgId)
 			throws Exception {
 
+		this.extKefedDao.initializeOoevvDao();
+		
 		CoreDao coreDao = this.extKefedDao.getCoreDao();
 		coreDao.connectToDb();
 		
@@ -273,6 +290,8 @@ public class ExtendedKefedServiceImpl implements ExtendedKefedService {
 	@Override
 	public Boolean insertKefedElement(KefedModelElement ke, String xml) throws Exception {
 
+		this.extKefedDao.initializeOoevvDao();
+		
 		CoreDao coreDao = this.extKefedDao.getCoreDao();
 		coreDao.connectToDb();
 		
@@ -319,83 +338,165 @@ public class ExtendedKefedServiceImpl implements ExtendedKefedService {
 	
 
 	@Override
-	public Boolean deleteKefedElement(String uid, String xml) throws Exception {
+	public List<String> deleteKefedElements(List<String> uids) throws Exception {
 
+		this.extKefedDao.initializeOoevvDao();
+		
 		CoreDao coreDao = this.extKefedDao.getCoreDao();
 		coreDao.connectToDb();
+
+		List<String> successes = new ArrayList<String>();
 		
-		String sql = "select km.uuid, ke.vpdmfId, ke.elementType " + 
-				"from " + 
-				"KefedModel as km, " +
-				"KefedModelElement as ke " +
-				"where " +
-				"km.vpdmfId = ke.model_id AND " +
-				"ke.uuid = \"" + uid + "\"";
+		for(String uid : uids) {
+
+			String sql = "select km.uuid, ke.vpdmfId, ke.elementType " + 
+					"from " + 
+					"KefedModel as km, " +
+					"KefedModelElement as ke " +
+					"where " +
+					"km.vpdmfId = ke.model_id AND " +
+					"ke.uuid = \"" + uid + "\"";
+			
+			ResultSet rs = coreDao.getCe().executeRawSqlQuery(sql);
+			rs.next();
+			
+			String kmUid =  rs.getString("km.uuid");
+			Long keId = rs.getLong("ke.vpdmfId");
+			String keType =  rs.getString("ke.elementType");
+			rs.close();
+			
+			boolean success = coreDao.deleteByIdInTrans(keId, keType);
+			
+			if( success ) {
+				successes.add(uid);
+			}
 		
-		ResultSet rs = coreDao.getCe().executeRawSqlQuery(sql);
-		rs.next();
-		
-		String kmUid =  rs.getString("km.uuid");
-		Long keId = rs.getLong("ke.vpdmfId");
-		String keType =  rs.getString("ke.elementType");
-		rs.close();
-		
-		coreDao.deleteByIdInTrans(keId, keType);
-		
-		if(xml.length() > 0 ) {
-			xml = xml.replaceAll("\"", "\\\\\"");
-			String sql2 = "UPDATE KefedModel SET diagramXML = \"" + xml + "\" " +
-					" WHERE uuid = \"" + kmUid+ "\";";
-			coreDao.getCe().executeRawUpdateQuery(sql2);
 		}
 		
 		coreDao.commitTransaction();
 		
 		coreDao.closeDbConnection();		
 		
-		return true;
+		return successes;
 		
 	}
 
 	@Override
-	public Boolean deleteKefedEdge(String uid, String xml) throws Exception {
+	public List<String> deleteKefedEdges(List<String> uids) throws Exception {
+		
+		this.extKefedDao.initializeOoevvDao();
 		
 		CoreDao coreDao = this.extKefedDao.getCoreDao();
 		coreDao.connectToDb();
 		
-		String sql = "select km.uuid, ke.vpdmfId " + 
+		List<String> successes = new ArrayList<String>();
+		
+		for(String uid : uids) {
+		
+			String sql = "select km.uuid, ke.vpdmfId " + 
+					"from " + 
+					"KefedModel as km, " +
+					"KefedModelEdge as ke " +
+					"where " +
+					"km.vpdmfId = ke.model_id AND " +
+					"ke.uuid = \"" + uid + "\"";
+			
+			ResultSet rs = coreDao.getCe().executeRawSqlQuery(sql);
+			rs.next();
+			
+			Long keId = rs.getLong("ke.vpdmfId");
+			rs.close();
+			
+			boolean success = coreDao.deleteByIdInTrans(keId, "KefedModelEdge");
+						
+			if( success ) {
+				successes.add(uid);
+			}
+
+		}		
+		
+		coreDao.commitTransaction();
+		
+		coreDao.closeDbConnection();		
+		
+		return successes;
+		
+	}
+	
+	@Override
+	public Boolean deleteCompleteKefedModelFromUid(String uid) throws Exception {
+		
+		this.extKefedDao.initializeOoevvDao();
+		
+		CoreDao coreDao = this.extKefedDao.getCoreDao();
+		coreDao.connectToDb();
+		
+		String sql = "select ke.vpdmfId " + 
 				"from " + 
 				"KefedModel as km, " +
 				"KefedModelEdge as ke " +
 				"where " +
 				"km.vpdmfId = ke.model_id AND " +
-				"ke.uuid = \"" + uid + "\"";
-		
+				"km.uuid = '" + uid + "'";
 		ResultSet rs = coreDao.getCe().executeRawSqlQuery(sql);
-		rs.next();
-		
-		String kmUid =  rs.getString("km.uuid");
-		Long keId = rs.getLong("ke.vpdmfId");
-		rs.close();
-		
-		coreDao.deleteByIdInTrans(keId, "KefedModelEdge");
-		
-		if(xml.length() > 0 ) {
-			xml = xml.replaceAll("\"", "\\\\\"");
-			String sql2 = "UPDATE KefedModel SET diagramXML = \"" + xml + "\" " +
-					" WHERE uuid = \"" + kmUid+ "\";";
-			coreDao.getCe().executeRawUpdateQuery(sql2);
+		List<Long> edgeIds = new ArrayList<Long>();
+		while( rs.next() ) {
+			edgeIds.add(rs.getLong("ke.vpdmfId"));			
 		}
+		rs.close();
+
+		sql = "select ke.vpdmfId, ke.elementType " + 
+				"from " + 
+				"KefedModel as km, " +
+				"KefedModelElement as ke " +
+				"where " +
+				"km.vpdmfId = ke.model_id AND " +
+				"km.uuid = '" + uid + "'";
+		rs = coreDao.getCe().executeRawSqlQuery(sql);
+		
+		Map<Long,String> elementIds = new HashMap<Long,String>();
+		while( rs.next() ) {
+			elementIds.put( rs.getLong("ke.vpdmfId"),
+					rs.getString("ke.elementType") );			
+		}
+		rs.close();
+
+		sql = "select km.vpdmfId " + 
+				"from " + 
+				"KefedModel as km " +
+				"where " +
+				"km.uuid = '" + uid + "'";
+		
+		rs = coreDao.getCe().executeRawSqlQuery(sql);
+		if( !rs.next() ) {
+			rs.close();
+			return false;
+		}
+		Long id = rs.getLong("km.vpdmfId");
+		rs.close();
+
+		for(Long edgeId: edgeIds) {
+			coreDao.deleteByIdInTrans(edgeId, "KefedModelEdge");
+		}
+
+		for(Long elementId: elementIds.keySet()) {
+			coreDao.deleteByIdInTrans(elementId, elementIds.get(elementId));
+		}
+		
+		coreDao.deleteByIdInTrans(id, "KefedModel");
 		
 		coreDao.commitTransaction();
 		
 		coreDao.closeDbConnection();		
 		
 		return true;
+	
 	}
 	
 	@Override
 	public Boolean deleteCompleteKefedModel(Long id) throws Exception {
+		
+		this.extKefedDao.initializeOoevvDao();
 		
 		CoreDao coreDao = this.extKefedDao.getCoreDao();
 		coreDao.connectToDb();
@@ -449,6 +550,8 @@ public class ExtendedKefedServiceImpl implements ExtendedKefedService {
 		
 	@Override
 	public Boolean moveKefedEdgesAndElements(List<String> uids, int dx, int dy) throws Exception {
+		
+		this.extKefedDao.initializeOoevvDao();
 		
 		CoreDao coreDao = this.extKefedDao.getCoreDao();
 		coreDao.connectToDb();

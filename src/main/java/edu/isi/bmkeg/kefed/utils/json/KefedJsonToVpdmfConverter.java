@@ -242,28 +242,15 @@ public class KefedJsonToVpdmfConverter extends ExcelEngine {
 				String s = clean(n.getNameValue());
 				
 				if( type.equals("Experimental Object") ) {
-												
-						/*Term t = new Term();
-						t.setOntology(ooevv);
-						t.setShortTermId(s);
-						t.setTermValue(s);
-						OoevvEntity en = new OoevvEntity();
-						en.setTerm(t);
-						
-						enMap.put(s, en);
-						enCount.put(s, 1);*/
 					
 					enSet.add(s);
-
-												
-					
+							
 				} else if( type.equals("Activity") ) {
 												
 					prSet.add(s);					
 				
 				} else if( type.equals("Independent Variable Data") || 
 						type.equals("Parameter Specification")  ) {
-					
 					
 					paramSet.add(s);
 					
@@ -405,9 +392,7 @@ public class KefedJsonToVpdmfConverter extends ExcelEngine {
 				
 				List outPath = DijkstraShortestPath.findPathBetween(g, p, m);
 				if( outPath != null ) {
-					
-					mp.put(p, outPath.size());						
-								
+					mp.put(p, outPath.size());										
 				}
 				
 			}
